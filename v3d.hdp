@@ -1,0 +1,5 @@
+Library:	v3d
+Author:		Fernando Raya
+Target-Type:	dll
+Files: library
+       v3d
