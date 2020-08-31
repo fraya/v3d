@@ -46,11 +46,11 @@ end;
 
 define sealed class <v3d> (<object>)
   constant slot x :: <float>,
-    init-keyword: x:;
+    required-init-keyword: x:;
   constant slot y :: <float>,
-    init-keyword: y:;
+    required-init-keyword: y:;
   constant slot z :: <float>,
-    init-keyword: z:;
+    required-init-keyword: z:;
 end class <v3d>;
 
 define method make
