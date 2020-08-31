@@ -4,7 +4,7 @@ Author: Fernando Raya
 Copyright: (c) 2020
 
 define test test-zero ()
-  let v = make(<v3d>, x: 0.0, y: 0.0, z: 0.0);
+  let v = make(<v3d>, x: 0, y: 0, z: 0);
   assert-true(zero?(v));
   assert-equal(v, $v3d-zero);
   assert-true(zero?($v3d-zero));
