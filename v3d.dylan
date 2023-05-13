@@ -44,20 +44,20 @@ define method assert-equal-float
   end if;
 end;
 
-define sealed class <v3d> (<object>)
+define sealed class <v3> (<object>)
   constant slot x :: <float>,
     required-init-keyword: x:;
   constant slot y :: <float>,
     required-init-keyword: y:;
   constant slot z :: <float>,
     required-init-keyword: z:;
-end class <v3d>;
+end class <v3>;
 
 define method make
-  (type == <v3d>, #rest args, #key x, y, z)
-  => (v :: <v3d>)
+  (type == <v3>, #rest args, #key x, y, z)
+  => (v :: <v3>)
   apply(next-method,
-	<v3d>,
+	<v3>,
 	x: as(<float>, x),
 	y: as(<float>, y),
 	z: as(<float>, z),
@@ -65,16 +65,16 @@ define method make
 end;	  
 
 define method print-object
-  (v :: <v3d>, s :: <stream>)
+  (v :: <v3>, s :: <stream>)
   => ()
   format(s, "(x: %=, y: %=, z: %=)", v.x, v.y, v.z)
 end;
 
 define constant $v3d-zero 
-  = make(<v3d>, x: 0, y: 0, z: 0);
+  = make(<v3>, x: 0, y: 0, z: 0);
 
 define method \=
-  (a :: <v3d>, b :: <v3d>)
+  (a :: <v3>, b :: <v3>)
   => (equal? :: <boolean>)
   //a.x = b.x & a.y = b.y & a.z = b.z
    assert-equal-float(a.x, b.x)
@@ -83,85 +83,85 @@ define method \=
 end;
 
 define method \+
-  (a :: <v3d>, b :: <v3d>)
-  => (sum :: <v3d>)
-  make(<v3d>,
+  (a :: <v3>, b :: <v3>)
+  => (sum :: <v3>)
+  make(<v3>,
        x: a.x + b.x,
        y: a.y + b.y,
        z: a.z + b.z)  
 end;
 
 define method \-
-  (a :: <v3d>, b :: <v3d>)
-  => (difference :: <v3d>)
-  make(<v3d>,
+  (a :: <v3>, b :: <v3>)
+  => (difference :: <v3>)
+  make(<v3>,
        x: a.x - b.x,
        y: a.y - b.y,
        z: a.z - b.z)
 end;
 
 define method negative
-  (p :: <v3d>)
-  => (negated :: <v3d>)
-  make(<v3d>,
+  (p :: <v3>)
+  => (negated :: <v3>)
+  make(<v3>,
        x: -p.x,
        y: -p.y,
        z: -p.z)
 end;
 
 define method \*
-  (p :: <v3d>, n :: <number>)
-  => (product :: <v3d>)
-  make(<v3d>,
+  (p :: <v3>, n :: <number>)
+  => (product :: <v3>)
+  make(<v3>,
        x: p.x * n,
        y: p.y * n,
        z: p.z * n)
 end;
 
 define method \/
-  (p :: <v3d>, n :: <number>)
-  => (division :: <v3d>)
-  make(<v3d>,
+  (p :: <v3>, n :: <number>)
+  => (division :: <v3>)
+  make(<v3>,
        x: p.x / n,
        y: p.y / n,
        z: p.z / n)
 end;
 
 define method dot-product
-  (a :: <v3d>, b :: <v3d>)
+  (a :: <v3>, b :: <v3>)
   => (n :: <float>)
   as(<float>, (a.x * b.x) + (a.y * b.y) + (a.z * b.z))
 end;
 
 define method squared
-  (v :: <v3d>)
+  (v :: <v3>)
   => (n :: <float>)
   dot-product(v, v)
 end;
 
 define method magnitude
-  (v :: <v3d>)
+  (v :: <v3>)
   => (n :: <float>)
   sqrt(squared(v))
 end;
 
 define method cross-product
-  (a :: <v3d>, b :: <v3d>)
-  => (result :: <v3d>)
-  make(<v3d>,
+  (a :: <v3>, b :: <v3>)
+  => (result :: <v3>)
+  make(<v3>,
        x: a.y * b.z - a.z * b.y,
        y: a.z * b.x - a.x * b.z,
        z: a.x * b.y - a.y * b.x)
 end;
 
 define method unit?
-  (v :: <v3d>)
+  (v :: <v3>)
   => (is-unit :: <boolean>)
   magnitude(v) = 1.0
 end;
 
 define method zero?
-  (v :: <v3d>)
+  (v :: <v3>)
   => (zero? :: <boolean>)
     v.x.zero?
   & v.y.zero?
@@ -169,19 +169,19 @@ define method zero?
 end;
 
 define method normalize
-  (v :: <v3d>)
-  => (normalized :: <v3d>)
+  (v :: <v3>)
+  => (normalized :: <v3>)
   v / magnitude(v)
 end;
 
 define method unitize
-  (v :: <v3d>)
-  => (unit :: <v3d>)
+  (v :: <v3>)
+  => (unit :: <v3>)
   normalize(v)
 end;
 
 define method distance
-  (a :: <v3d>, b :: <v3d>)
+  (a :: <v3>, b :: <v3>)
   => (n :: <number>)
   magnitude(a - b)
 end;

@@ -18,7 +18,7 @@ define module v3d
   use print;
 
   export
-    <v3d>,
+    <v3>,
     $v3d-zero,
     x,
     y,
