@@ -45,12 +45,12 @@ define method assert-equal-float
 end;
 
 define sealed class <v3> (<object>)
-  constant slot x :: <float>,
-    required-init-keyword: x:;
-  constant slot y :: <float>,
-    required-init-keyword: y:;
-  constant slot z :: <float>,
-    required-init-keyword: z:;
+  constant slot x :: <float> = 0,
+    init-keyword: x:;
+  constant slot y :: <float> = 0,
+    init-keyword: y:;
+  constant slot z :: <float> = 0,
+    init-keyword: z:;
 end class <v3>;
 
 define method make
