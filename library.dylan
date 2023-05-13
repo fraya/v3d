@@ -20,9 +20,9 @@ define module v3d
   export
     <v3>,
     $v3d-zero,
-    x,
-    y,
-    z;
+    v3-x,
+    v3-y,
+    v3-z;
 
   export
     dot-product,
