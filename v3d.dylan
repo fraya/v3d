@@ -66,7 +66,7 @@ define method print-object
 end;
 
 define constant $v3d-zero 
-  = make(<v3>, x: 0, y: 0, z: 0);
+  = make(<v3>);
 
 define method \=
     (a :: <v3>, b :: <v3>) => (equal? :: <boolean>)
