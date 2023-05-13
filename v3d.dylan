@@ -5,11 +5,11 @@ Copyright:  (c) 2020
 License:    See LICENSE file
 
 // https://how-to.fandom.com/wiki/Howto_compare_floating_point_numbers_in_the_C_programming_language
-// define method assert-equal-float
-//   (x :: <float>, y :: <float>, #key epsilon = 0.00001 )
-//   => (equal? :: <boolean>)
-//   ((x - epsilon) < y) & ((x + epsilon) > y)
-// end;
+define method assert-equal-float
+   (x :: <real>, y :: <real>, #key epsilon = 0.00001 )
+   => (equal? :: <boolean>)
+   ((x - epsilon) < y) & ((x + epsilon) > y)
+end;
 
 // // https://floating-point-gui.de/errors/comparison/
 // define method assert-equal-float
@@ -30,35 +30,25 @@ License:    See LICENSE file
 // end;
 
 // // https://github.com/dylan-lang/testworks/issues/69
-define method assert-equal-float
-  (x :: <float>, y :: <real>, #key max-ulps = 3.0d0)
-  => (result :: <boolean>)
-  if (y.zero?)
-    abs(x) < scale-float(max-ulps, 1 - float-digits(x));
-  else
-    let (x-sig, x-exp, x-sign) = decode-float(x);
-    let scaled-diff = abs(scale-float(x, - x-exp) - scale-float(y, - x-exp));
-    let ulp-diff = scale-float(scaled-diff, float-digits(x) - 1);
+// define method assert-equal-float
+//   (x :: <real>, y :: <real>, #key max-ulps = 3.0d0)
+//   => (result :: <boolean>)
+//   if (y.zero?)
+//     abs(x) < scale-float(max-ulps, 1 - float-digits(x));
+//   else
+//     let (x-sig, x-exp, x-sign) = decode-float(x);
+//     let scaled-diff = abs(scale-float(x, - x-exp) - scale-float(y, - x-exp));
+//     let ulp-diff = scale-float(scaled-diff, float-digits(x) - 1);
 
-    ulp-diff < max-ulps;
-  end if;
-end;
+//     ulp-diff < max-ulps;
+//   end if;
+// end;
 
 define sealed class <v3> (<object>)
-  slot x :: <float> = 0, init-keyword: x:, setter: #f;
-  slot y :: <float> = 0, init-keyword: y:, setter: #f;
-  slot z :: <float> = 0, init-keyword: z:, setter: #f;
+  slot x :: <real> = 0.0, init-keyword: x:, setter: #f;
+  slot y :: <real> = 0.0, init-keyword: y:, setter: #f;
+  slot z :: <real> = 0.0, init-keyword: z:, setter: #f;
 end class <v3>;
-
-define method make
-    (type == <v3>, #rest args, #key x, y, z) => (v :: <v3>)
-  apply(next-method,
-	<v3>,
-	x: as(<float>, x),
-	y: as(<float>, y),
-	z: as(<float>, z),
-	args)
-end;	  
 
 define method print-object
     (v :: <v3>, s :: <stream>) => ()
@@ -70,7 +60,7 @@ define constant $v3d-zero
 
 define method \=
     (a :: <v3>, b :: <v3>) => (equal? :: <boolean>)
-  //a.x = b.x & a.y = b.y & a.z = b.z
+  // a.x = b.x & a.y = b.y & a.z = b.z
   assert-equal-float(a.x, b.x)
     & assert-equal-float(a.y, b.y)
     & assert-equal-float(a.z, b.z)
