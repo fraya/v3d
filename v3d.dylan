@@ -45,20 +45,13 @@ define method assert-equal-float
 end;
 
 define sealed class <v3> (<object>)
-  slot x :: <float> = 0,
-    init-keyword: x:,
-    setter: #f;
-  slot y :: <float> = 0,
-    init-keyword: y:,
-    setter: #f;
-  slot z :: <float> = 0,
-    init-keyword: z:,
-    setter: #f;
+  slot x :: <float> = 0, init-keyword: x:, setter: #f;
+  slot y :: <float> = 0, init-keyword: y:, setter: #f;
+  slot z :: <float> = 0, init-keyword: z:, setter: #f;
 end class <v3>;
 
 define method make
-  (type == <v3>, #rest args, #key x, y, z)
-  => (v :: <v3>)
+    (type == <v3>, #rest args, #key x, y, z) => (v :: <v3>)
   apply(next-method,
 	<v3>,
 	x: as(<float>, x),
@@ -68,8 +61,7 @@ define method make
 end;	  
 
 define method print-object
-  (v :: <v3>, s :: <stream>)
-  => ()
+    (v :: <v3>, s :: <stream>) => ()
   format(s, "(x: %=, y: %=, z: %=)", v.x, v.y, v.z)
 end;
 
@@ -77,17 +69,15 @@ define constant $v3d-zero
   = make(<v3>, x: 0, y: 0, z: 0);
 
 define method \=
-  (a :: <v3>, b :: <v3>)
-  => (equal? :: <boolean>)
+    (a :: <v3>, b :: <v3>) => (equal? :: <boolean>)
   //a.x = b.x & a.y = b.y & a.z = b.z
-   assert-equal-float(a.x, b.x)
- & assert-equal-float(a.y, b.y)
- & assert-equal-float(a.z, b.z)
+  assert-equal-float(a.x, b.x)
+    & assert-equal-float(a.y, b.y)
+    & assert-equal-float(a.z, b.z)
 end;
 
 define method \+
-  (a :: <v3>, b :: <v3>)
-  => (sum :: <v3>)
+    (a :: <v3>, b :: <v3>) => (sum :: <v3>)
   make(<v3>,
        x: a.x + b.x,
        y: a.y + b.y,
@@ -95,8 +85,7 @@ define method \+
 end;
 
 define method \-
-  (a :: <v3>, b :: <v3>)
-  => (difference :: <v3>)
+    (a :: <v3>, b :: <v3>) => (difference :: <v3>)
   make(<v3>,
        x: a.x - b.x,
        y: a.y - b.y,
@@ -104,8 +93,7 @@ define method \-
 end;
 
 define method negative
-  (p :: <v3>)
-  => (negated :: <v3>)
+    (p :: <v3>) => (negated :: <v3>)
   make(<v3>,
        x: -p.x,
        y: -p.y,
@@ -113,8 +101,7 @@ define method negative
 end;
 
 define method \*
-  (p :: <v3>, n :: <number>)
-  => (product :: <v3>)
+    (p :: <v3>, n :: <number>) => (product :: <v3>)
   make(<v3>,
        x: p.x * n,
        y: p.y * n,
@@ -122,8 +109,7 @@ define method \*
 end;
 
 define method \/
-  (p :: <v3>, n :: <number>)
-  => (division :: <v3>)
+    (p :: <v3>, n :: <number>) => (division :: <v3>)
   make(<v3>,
        x: p.x / n,
        y: p.y / n,
@@ -131,26 +117,22 @@ define method \/
 end;
 
 define method dot-product
-  (a :: <v3>, b :: <v3>)
-  => (n :: <float>)
+    (a :: <v3>, b :: <v3>) => (n :: <float>)
   as(<float>, (a.x * b.x) + (a.y * b.y) + (a.z * b.z))
 end;
 
 define method squared
-  (v :: <v3>)
-  => (n :: <float>)
+    (v :: <v3>) => (n :: <float>)
   dot-product(v, v)
 end;
 
 define method magnitude
-  (v :: <v3>)
-  => (n :: <float>)
+    (v :: <v3>) => (n :: <float>)
   sqrt(squared(v))
 end;
 
 define method cross-product
-  (a :: <v3>, b :: <v3>)
-  => (result :: <v3>)
+    (a :: <v3>, b :: <v3>) => (result :: <v3>)
   make(<v3>,
        x: a.y * b.z - a.z * b.y,
        y: a.z * b.x - a.x * b.z,
@@ -158,34 +140,27 @@ define method cross-product
 end;
 
 define method unit?
-  (v :: <v3>)
-  => (is-unit :: <boolean>)
+    (v :: <v3>) => (is-unit :: <boolean>)
   magnitude(v) = 1.0
 end;
 
 define method zero?
-  (v :: <v3>)
-  => (zero? :: <boolean>)
-    v.x.zero?
-  & v.y.zero?
-  & v.z.zero?
+    (v :: <v3>) => (zero? :: <boolean>)
+  v.x.zero? & v.y.zero? & v.z.zero?
 end;
 
 define method normalize
-  (v :: <v3>)
-  => (normalized :: <v3>)
+    (v :: <v3>) => (normalized :: <v3>)
   v / magnitude(v)
 end;
 
 define method unitize
-  (v :: <v3>)
-  => (unit :: <v3>)
+    (v :: <v3>) => (unit :: <v3>)
   normalize(v)
 end;
 
 define method distance
-  (a :: <v3>, b :: <v3>)
-  => (n :: <number>)
+    (a :: <v3>, b :: <v3>) => (n :: <number>)
   magnitude(a - b)
 end;
 
