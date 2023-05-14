@@ -69,14 +69,14 @@ define method \/
        z: p.v3-z / n)
 end;
 
-define method dot-product
+define method \*
     (a :: <v3>, b :: <v3>) => (n :: <float>)
   as(<float>, (a.v3-x * b.v3-x) + (a.v3-y * b.v3-y) + (a.v3-z * b.v3-z))
 end;
 
 define method squared
     (v :: <v3>) => (n :: <float>)
-  dot-product(v, v)
+  v * v
 end;
 
 define method magnitude

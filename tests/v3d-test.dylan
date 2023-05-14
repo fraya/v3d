@@ -65,7 +65,7 @@ end;
 define test test-dot-product ()
   let u = make(<v3>, x: 1, y: 3, z: -5);
   let v = make(<v3>, x: 4, y: -2, z: -1);
-  assert-equal(dot-product(u,v), 3.0);
+  assert-equal(u * v, 3.0);
 end;
 
 define test test-squared ()

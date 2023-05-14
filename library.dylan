@@ -25,7 +25,6 @@ define module v3d
     v3-z;
 
   export
-    dot-product,
     squared,
     magnitude,
     cross-product,
