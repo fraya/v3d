@@ -4,11 +4,10 @@ Author:     Fernando Raya
 Copyright:  (c) 2020
 License:    See LICENSE file
 
-// https://how-to.fandom.com/wiki/Howto_compare_floating_point_numbers_in_the_C_programming_language
 define method assert-equal-float
    (x :: <real>, y :: <real>, #key epsilon = 0.00001 )
    => (equal? :: <boolean>)
-   ((x - epsilon) < y) & ((x + epsilon) > y)
+  abs(x - y) < epsilon
 end;
 
 // // https://floating-point-gui.de/errors/comparison/
