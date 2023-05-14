@@ -10,39 +10,6 @@ define method similar
   abs(x - y) < epsilon
 end;
 
-// // https://floating-point-gui.de/errors/comparison/
-// define method assert-equal-float
-//   (x :: <float>, y :: <float>, #key epsilon = 0.00001)
-//   => (equal? :: <boolean>)
-//   let abs-x = abs(x);
-//   let abs-y = abs(y);
-//   let diff  = abs(x - y);
-
-//   if (x == y)
-//     // handles infinities
-//     #t
-//   elseif (zero?(x) | zero?(y) | (abs-x + abs-y < float.min-normal))
-//     diff < (epsilon * float.min-normal)
-//   else
-//     diff / min((abs-x + abs-y), float.max-value) < epsilon
-//   end if;
-// end;
-
-// // https://github.com/dylan-lang/testworks/issues/69
-// define method assert-equal-float
-//   (x :: <real>, y :: <real>, #key max-ulps = 3.0d0)
-//   => (result :: <boolean>)
-//   if (y.zero?)
-//     abs(x) < scale-float(max-ulps, 1 - float-digits(x));
-//   else
-//     let (x-sig, x-exp, x-sign) = decode-float(x);
-//     let scaled-diff = abs(scale-float(x, - x-exp) - scale-float(y, - x-exp));
-//     let ulp-diff = scale-float(scaled-diff, float-digits(x) - 1);
-
-//     ulp-diff < max-ulps;
-//   end if;
-// end;
-
 define sealed class <v3> (<object>)
   slot v3-x :: <real> = 0.0, init-keyword: x:, setter: #f;
   slot v3-y :: <real> = 0.0, init-keyword: y:, setter: #f;
@@ -54,7 +21,7 @@ define method print-object
   format(s, "(x: %=, y: %=, z: %=)", v.v3-x, v.v3-y, v.v3-z)
 end;
 
-define constant $v3d-zero 
+define constant $v3-zero 
   = make(<v3>);
 
 define method \=

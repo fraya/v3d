@@ -19,7 +19,7 @@ define module v3d
 
   export
     <v3>,
-    $v3d-zero,
+    $v3-zero,
     v3-x,
     v3-y,
     v3-z;

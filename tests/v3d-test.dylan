@@ -6,8 +6,8 @@ Copyright: (c) 2020
 define test test-zero ()
   let v = make(<v3>, x: 0, y: 0, z: 0);
   assert-true(zero?(v));
-  assert-equal(v, $v3d-zero);
-  assert-true(zero?($v3d-zero));
+  assert-equal(v, $v3-zero);
+  assert-true(zero?($v3-zero));
 end;
 
 define test test-plus ()
@@ -31,7 +31,7 @@ end;
 
 define test test-inverse-element-of-addition ()
   let v = make(<v3>, x: 1.0, y: 2.0, z: 3.0);
-  assert-equal(v + (-v), $v3d-zero);
+  assert-equal(v + (-v), $v3-zero);
 end;
 
 define test test-minus ()
