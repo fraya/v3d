@@ -4,7 +4,7 @@ Author:     Fernando Raya
 Copyright:  (c) 2020
 License:    See LICENSE file
 
-define method assert-equal-float
+define method similar
    (x :: <real>, y :: <real>, #key epsilon = 0.00001 )
    => (equal? :: <boolean>)
   abs(x - y) < epsilon
@@ -59,10 +59,7 @@ define constant $v3d-zero
 
 define method \=
     (a :: <v3>, b :: <v3>) => (equal? :: <boolean>)
-  // a.v3-x = b.v3-x & a.v3-y = b.v3-y & a.v3-z = b.v3-z
-  assert-equal-float(a.v3-x, b.v3-x)
-    & assert-equal-float(a.v3-y, b.v3-y)
-    & assert-equal-float(a.v3-z, b.v3-z)
+  similar(a.v3-x, b.v3-x) & similar(a.v3-y, b.v3-y) & similar(a.v3-z, b.v3-z)
 end;
 
 define method \+
