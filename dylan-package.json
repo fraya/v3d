@@ -1,0 +1,9 @@
+{
+    "name": "v3d",
+    "category": "math",
+    "description": "Small 3d vector library",
+    "dependencies": [  ],
+    "dev-dependencies": [ "testworks@2.1" ],
+    "version": "0.1.0",
+    "url": "https://github.com/fraya/v3d"
+}
