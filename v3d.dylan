@@ -24,7 +24,7 @@ end;
 
 define method print-object
     (v :: <v3>, s :: <stream>) => ()
-  format(s, "(x: %=, y: %=, z: %=)", v.v-x, v.v-y, v.v-z)
+  format(s, "v3(%=, %=, %=)", v.v-x, v.v-y, v.v-z)
 end;
 
 define constant $v3-zero 
