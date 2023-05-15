@@ -83,10 +83,10 @@ define test test-cross-product ()
 end;
 
 define test test-normalize ()
-  let u = v3(3.0, 1.0, 2.0);
-  let v = v3(0.8017837, 0.2672612, 0.5345224);
-  let n = normalize(u);
-  assert-equal(n, v);
+  let v1 = v3(3.0, 1.0, 2.0);
+  assert-equal(normalize(v1), v2);
+  assert-equal(unitize(v1), v2);
+  assert-true(similar(magnitude(normalize(v1)), 1.0));
 end;
 
 run-test-application();

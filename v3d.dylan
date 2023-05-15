@@ -98,10 +98,7 @@ define method normalize
   v / magnitude(v)
 end;
 
-define method unitize
-    (v :: <v3>) => (unit :: <v3>)
-  normalize(v)
-end;
+define constant unitize = normalize;
 
 define method distance
     (a :: <v3>, b :: <v3>) => (n :: <float>)

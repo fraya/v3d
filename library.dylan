@@ -26,6 +26,7 @@ define module v3d
     v-z;
 
   export
+    similar,
     squared,
     magnitude,
     cross-product,
