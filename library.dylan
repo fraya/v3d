@@ -20,9 +20,9 @@ define module v3d
   export
     <v3>,
     $v3-zero,
-    v3-x,
-    v3-y,
-    v3-z;
+    v-x,
+    v-y,
+    v-z;
 
   export
     squared,
