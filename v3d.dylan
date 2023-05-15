@@ -5,8 +5,8 @@ Copyright:  (c) 2020
 License:    See LICENSE file
 
 define method similar
-   (x :: <float>, y :: <float>, #key epsilon = 0.00001 )
-   => (equal? :: <boolean>)
+    (x :: <float>, y :: <float>, #key epsilon = 0.00001 )
+ => (equal? :: <boolean>)
   abs(x - y) < epsilon
 end;
 
