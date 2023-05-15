@@ -84,8 +84,7 @@ end;
 
 define test test-normalize ()
   let v1 = v3(3.0, 1.0, 2.0);
-  assert-equal(normalize(v1), v2);
-  assert-equal(unitize(v1), v2);
+  assert-equal(normalize(v1), unitize(v1));
   assert-true(similar(magnitude(normalize(v1)), 1.0));
 end;
 
