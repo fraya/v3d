@@ -37,42 +37,27 @@ end;
 
 define method \+
     (a :: <v3>, b :: <v3>) => (sum :: <v3>)
-  make(<v3>,
-       x: a.v-x + b.v-x,
-       y: a.v-y + b.v-y,
-       z: a.v-z + b.v-z)  
+  make(<v3>, x: a.v-x + b.v-x, y: a.v-y + b.v-y, z: a.v-z + b.v-z)  
 end;
 
 define method \-
     (a :: <v3>, b :: <v3>) => (difference :: <v3>)
-  make(<v3>,
-       x: a.v-x - b.v-x,
-       y: a.v-y - b.v-y,
-       z: a.v-z - b.v-z)
+  make(<v3>, x: a.v-x - b.v-x, y: a.v-y - b.v-y, z: a.v-z - b.v-z)
 end;
 
 define method negative
     (p :: <v3>) => (negated :: <v3>)
-  make(<v3>,
-       x: -p.v-x,
-       y: -p.v-y,
-       z: -p.v-z)
+  make(<v3>, x: -p.v-x, y: -p.v-y, z: -p.v-z)
 end;
 
 define method \*
     (p :: <v3>, n :: <number>) => (product :: <v3>)
-  make(<v3>,
-       x: p.v-x * n,
-       y: p.v-y * n,
-       z: p.v-z * n)
+  make(<v3>, x: p.v-x * n, y: p.v-y * n, z: p.v-z * n)
 end;
 
 define method \/
     (p :: <v3>, n :: <number>) => (division :: <v3>)
-  make(<v3>,
-       x: p.v-x / n,
-       y: p.v-y / n,
-       z: p.v-z / n)
+  make(<v3>, x: p.v-x / n, y: p.v-y / n, z: p.v-z / n)
 end;
 
 define method \*
