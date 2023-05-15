@@ -5,15 +5,15 @@ Copyright:  (c) 2020
 License:    See LICENSE file
 
 define method similar
-   (x :: <real>, y :: <real>, #key epsilon = 0.00001 )
+   (x :: <float>, y :: <float>, #key epsilon = 0.00001 )
    => (equal? :: <boolean>)
   abs(x - y) < epsilon
 end;
 
 define sealed class <v3> (<object>)
-  slot v3-x :: <real> = 0.0, init-keyword: x:, setter: #f;
-  slot v3-y :: <real> = 0.0, init-keyword: y:, setter: #f;
-  slot v3-z :: <real> = 0.0, init-keyword: z:, setter: #f;
+  slot v3-x :: <float> = 0.0, init-keyword: x:, setter: #f;
+  slot v3-y :: <float> = 0.0, init-keyword: y:, setter: #f;
+  slot v3-z :: <float> = 0.0, init-keyword: z:, setter: #f;
 end class <v3>;
 
 define method print-object
@@ -71,7 +71,7 @@ end;
 
 define method \*
     (a :: <v3>, b :: <v3>) => (n :: <float>)
-  as(<float>, (a.v3-x * b.v3-x) + (a.v3-y * b.v3-y) + (a.v3-z * b.v3-z))
+  (a.v3-x * b.v3-x) + (a.v3-y * b.v3-y) + (a.v3-z * b.v3-z)
 end;
 
 define method squared
@@ -113,7 +113,7 @@ define method unitize
 end;
 
 define method distance
-    (a :: <v3>, b :: <v3>) => (n :: <number>)
+    (a :: <v3>, b :: <v3>) => (n :: <float>)
   magnitude(a - b)
 end;
 
