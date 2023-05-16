@@ -11,7 +11,6 @@ end library v3d;
 define module v3d
   use common-dylan;
   use transcendentals;
-  use format-out;
   use format;
   use streams;
   use standard-io;
