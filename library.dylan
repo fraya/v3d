@@ -13,7 +13,6 @@ define module v3d
   use transcendentals;
   use format;
   use streams;
-  use standard-io;
   use print;
 
   export
