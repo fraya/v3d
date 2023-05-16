@@ -42,5 +42,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: documentation/build/html
-          target-folder: v3d
-          repository-name: fraya/fraya.github.io
+          target-folder: docs/v3d
