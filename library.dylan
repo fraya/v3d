@@ -16,10 +16,18 @@ end library v3d;
 
 define module v3d
   use common-dylan;
-  use transcendentals;
-  use format;
-  use streams;
-  use print;
+  
+  use format,
+    import: { format };  
+
+  use print,
+    import: { print-object };
+
+  use streams:
+    import: { <stream> };
+
+  use transcendentals,
+    import: { sqrt };
 
   export
     <v3>,
