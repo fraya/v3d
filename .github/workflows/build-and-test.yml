@@ -28,3 +28,17 @@ jobs:
       - name: Run tests
         run: _build/bin/v3d-test
 
+      - name: Install sphinx
+        run: |
+          sudo apt-get install -y python3-sphinx python3-sphinxcontrib.plantuml
+
+      - name: Build docs
+        run: |
+          cd documentation
+          make html
+          cd ..
+
+      - name: Deploy docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: documentation/build/html
