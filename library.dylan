@@ -2,10 +2,16 @@ Module: dylan-user
 Licence: See LICENSE file
 
 define library v3d
-  export v3d;
+  use common-dylan,
+    import: { common-dylan,
+	      transcendentals };
   
-  use common-dylan;
-  use io;
+  use io,
+    import: { format,
+	      print,
+	      streams };
+
+  export v3d;
 end library v3d;
 
 define module v3d
