@@ -25,17 +25,21 @@ your new project with ``dylan new application <name>``, and edit the file
 Change this:
 
 .. code-block:: JSON
-		
-    "dependencies": [ ],
+
+   {
+     "dependencies": [ ]
+   }
 
 to this:
 
 .. code-block:: JSON
-		
-    "dependencies": [ "v3d" ],
+
+   {
+     "dependencies": [ "v3d" ]
+   }
 
 To know more about :program:`dylan` package manager visit
-`Dylan tool <https://opendylan.org/documentation/dylan-tool/>`_
+`Dylan tool <https://opendylan.org/documentation/dylan-tool/>`_.
 
 Quick summary of ``v3d``
 ========================
