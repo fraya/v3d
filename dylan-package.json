@@ -8,7 +8,7 @@
 	"sphinx-extensions@0.2.0",
 	"testworks@2.1"
     ],
-    "version": "0.1.0",
+    "version": "0.1.1",
     "url": "https://github.com/fraya/v3d",
     "license": "BSD 2",
     "contact": "fernandoraya in Google's mail"
