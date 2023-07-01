@@ -73,27 +73,42 @@ Library structure and dependencies
 The libraries used by the project are shown with the modules inside.
 The arrows between the modules are the dependencies.
 
-.. uml::
-   
-   folder "v3d" as v3d_lib {
-     [v3d] as v3d
-   }
+.. graphviz::
+   :caption: Libraries and modules used
 
-   folder "common-dylan" as common_dylan_lib {
-     [common-dylan] as common_dylan
-   }
-
-   folder "io"  as io_lib {
-     [format]
-     [streams]
-   }
-
-   common_dylan <-- v3d
-   format       <-- v3d 
-   streams      <-- v3d
-
-
-
+   digraph G {
+	 fontname="Helvetica,Arial,sans-serif";
+	 node [fontname="Helvetica,Arial,sans-serif";shape=box;]
+	 edge [fontname="Helvetica,Arial,sans-serif"]
+	 ranksep=1.0;
+	
+	 subgraph cluster_v3d {
+	   color=lightgrey;
+	   label="v3d library";
+	   v3d;
+	 };
+	
+	 subgraph cluster_common_dylan {
+	   color=lightgrey;
+	   label="common-dylan library";
+	   "common-dylan";
+	   transcendentals;
+	 };
+	
+     subgraph cluster_io {
+       color=lightgrey;
+	   label="io library";
+	   format;
+	   streams;
+	   print;
+	 };
+	
+	 v3d -> format;
+	 v3d -> streams;
+	 v3d -> print;
+	 v3d -> "common-dylan";
+	 v3d -> transcendentals;
+    }
 
 Index and Search
 ================

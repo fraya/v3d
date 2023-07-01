@@ -12,17 +12,7 @@
 #
 import os
 import sys
-# Temporary hack. When "current" links are created by `dylan update` in the
-# local workspace this can all be replaced by relative links like this:
-# ../../_pkg/sphinx-extensions/current/src/sphinxcontrib
-join = os.path.join
-insert = sys.path.insert
-abspath = os.path.abspath
-_dylan = os.getenv("DYLAN")
-if _dylan is None:
-    _dylan = join(os.getenv("HOME"), "dylan")
-insert (0, abspath(join(_dylan, 'pkg/sphinx-extensions/0.2.0/src/sphinxcontrib')))
-#sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../../sphinx-extensions/sphinxcontrib'))
 import dylan.themes as dylan_themes
 
 
@@ -39,7 +29,7 @@ copyright = 'Fernando Raya'
 # ones.
 extensions = [
     'dylan.domain',
-    'sphinxcontrib.plantuml'
+    'sphinx.ext.graphviz'
 ]
 
 # Necessary to make things like '.. current-module:: foo' work.
