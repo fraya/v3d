@@ -32,7 +32,7 @@ define module v3d
   export
     <v3>,
     $v3-zero,
-    v3d,
+    v3,
     v-x,
     v-y,
     v-z;

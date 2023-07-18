@@ -16,7 +16,7 @@ define sealed class <v3> (<object>)
   slot v-z :: <float> = 0.0, init-keyword: z:, setter: #f;
 end class <v3>;
 
-define function v3d
+define function v3
     (x :: <float>, y :: <float>, z :: <float>)
  => (v :: <v3>)
   make(<v3>, x: x, y: y, z: z)

@@ -5,9 +5,6 @@ The v3d library
 .. current-library:: v3d
 .. current-module:: v3d
 
-.. contents::
-   :depth: 3
-
 .. _v3:
 
 ``<v3>`` class
@@ -30,14 +27,14 @@ To create a vector use keywords:
 In case that a keyword is not used, the dimension is initialized to
 ``0.0``.
 
-Creation with ``v3d``
+Creation with ``v3``
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. function:: v3d
+.. function:: v3
 
-   Short form to create a ``v3d``.
+   Short form to create a ``v3``.
 
-   :signature: v3d *x* *y* *z* => (v)
+   :signature: v3 *x* *y* *z* => (v)
 
    :parameter x: Dimension ``x``. An instance of :drm:`<float>`
    :parameter y: Dimension ``y``. An instance of :drm:`<float>`
@@ -147,8 +144,8 @@ Equals (``=``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(1.0, 1.0, 1.0);
-     let v2 = v3d(2.0, 2.0, 2.0);
+     let v1 = v3(1.0, 1.0, 1.0);
+     let v2 = v3(2.0, 2.0, 2.0);
      let result = if (v1 = v2) "equals" else "different" end;
      format-out("%s\n", result);
      // different
@@ -170,8 +167,8 @@ Addition (``+``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(1.0, 1.0, 1.0);
-     let v2 = v3d(2.0, 2.0, 2.0);
+     let v1 = v3(1.0, 1.0, 1.0);
+     let v2 = v3(2.0, 2.0, 2.0);
      let v3 = v1 + v2;
      format-out("%=\n", v3);
      // v3(3.0, 3.0, 3.0)
@@ -194,8 +191,8 @@ Substraction (``-``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(2.0, 2.0, 2.0);
-     let v2 = v3d(1.0, 1.0, 1.0);
+     let v1 = v3(2.0, 2.0, 2.0);
+     let v2 = v3(1.0, 1.0, 1.0);
      let v3 = v1 - v2;
      format-out("%=\n", v3);
      // v3(1.0, 1.0, 1.0)
@@ -217,7 +214,7 @@ Negative (``-``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(2.0, 2.0, 2.0);
+     let v1 = v3(2.0, 2.0, 2.0);
      let v2 = -v1;
      format-out("%=\n", v2);
      // v3(-2.0, -2.0, -2.0)
@@ -240,8 +237,8 @@ Product (``*``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(2.0, 2.0, 2.0);
-     let v2 = v3d(2.0, 2.0, 2.0);
+     let v1 = v3(2.0, 2.0, 2.0);
+     let v2 = v3(2.0, 2.0, 2.0);
      let v3 = v1 * v2;
      format-out("%=\n", v3);
      // 12.0
@@ -267,7 +264,7 @@ Scalar multiplication (``*``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(1.0, 1.0, 1.0);
+     let v1 = v3(1.0, 1.0, 1.0);
      let v2 = v1 * 2;
      format-out("%=\n", v2);
      // v3(2.0, 2.0, 2.0)
@@ -290,7 +287,7 @@ Division (``/``)
 
    .. code-block:: dylan
 
-     let v1 = v3d(3.0, 3.0, 3.0);
+     let v1 = v3(3.0, 3.0, 3.0);
      let v2 = v1 / 3;
      format-out("%=\n", v2);
      // v3(1.0, 1.0, 1.0)
