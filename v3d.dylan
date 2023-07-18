@@ -16,7 +16,7 @@ define sealed class <v3> (<object>)
   slot v-z :: <float> = 0.0, init-keyword: z:, setter: #f;
 end class <v3>;
 
-define function v3
+define inline function v3
     (x :: <float>, y :: <float>, z :: <float>)
  => (v :: <v3>)
   make(<v3>, x: x, y: y, z: z)
@@ -65,17 +65,17 @@ define method \*
   (a.v-x * b.v-x) + (a.v-y * b.v-y) + (a.v-z * b.v-z)
 end;
 
-define method squared
+define function squared
     (v :: <v3>) => (n :: <float>)
   v * v
 end;
 
-define method magnitude
+define function magnitude
     (v :: <v3>) => (n :: <float>)
   sqrt(squared(v))
 end;
 
-define method cross-product
+define function cross-product
     (a :: <v3>, b :: <v3>) => (result :: <v3>)
   make(<v3>,
        x: a.v-y * b.v-z - a.v-z * b.v-y,
@@ -83,7 +83,7 @@ define method cross-product
        z: a.v-x * b.v-y - a.v-y * b.v-x)
 end;
 
-define method unit?
+define function unit?
     (v :: <v3>) => (is-unit :: <boolean>)
   magnitude(v) = 1.0
 end;
@@ -93,14 +93,14 @@ define method zero?
   v.v-x.zero? & v.v-y.zero? & v.v-z.zero?
 end;
 
-define method normalize
+define function normalize
     (v :: <v3>) => (normalized :: <v3>)
   v / magnitude(v)
 end;
 
 define constant unitize = normalize;
 
-define method distance
+define function distance
     (a :: <v3>, b :: <v3>) => (n :: <float>)
   magnitude(a - b)
 end;
