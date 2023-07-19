@@ -44,7 +44,6 @@ define module v3d
     cross-product,
     unit?,
     normalize,
-    unitize,
     distance;
   
 end module v3d;
