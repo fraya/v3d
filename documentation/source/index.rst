@@ -39,7 +39,7 @@ Quick summary of ``v3d``
 The module ``v3d`` exports the following features:
 
 - ``<v3>``
-- ``v3d``
+- ``v3``
 - ``v-x``
 - ``v-y``
 - ``v-z``
