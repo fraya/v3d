@@ -50,7 +50,7 @@ Creation with ``v3``
 
    .. code-block:: dylan
 
-     let v = v3d(1.0, 2.0, 3.0);
+     let v = v3(1.0, 2.0, 3.0);
      format-out("%=\n", v);
      // (1.0, 2.0, 3.0)
 
