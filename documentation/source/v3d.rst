@@ -22,7 +22,7 @@ To create a vector use keywords:
 
   let v = make(<v3>, x: 1.0, y: 2.0, z: 3.0);
   format-out("%=\n", v);
-  // v3(1.0, 2.0, 3.0)
+  // (1.0, 2.0, 3.0)
 
 In case that a keyword is not used, the dimension is initialized to
 ``0.0``.
@@ -52,7 +52,7 @@ Creation with ``v3``
 
      let v = v3d(1.0, 2.0, 3.0);
      format-out("%=\n", v);
-     // v3(1.0, 2.0, 3.0)
+     // (1.0, 2.0, 3.0)
 
 
 
@@ -171,7 +171,7 @@ Addition (``+``)
      let v2 = v3(2.0, 2.0, 2.0);
      let v3 = v1 + v2;
      format-out("%=\n", v3);
-     // v3(3.0, 3.0, 3.0)
+     // (3.0, 3.0, 3.0)
 
 
 Substraction (``-``)
@@ -195,7 +195,7 @@ Substraction (``-``)
      let v2 = v3(1.0, 1.0, 1.0);
      let v3 = v1 - v2;
      format-out("%=\n", v3);
-     // v3(1.0, 1.0, 1.0)
+     // (1.0, 1.0, 1.0)
 
 
 Negative (``-``)
@@ -217,7 +217,7 @@ Negative (``-``)
      let v1 = v3(2.0, 2.0, 2.0);
      let v2 = -v1;
      format-out("%=\n", v2);
-     // v3(-2.0, -2.0, -2.0)
+     // (-2.0, -2.0, -2.0)
 
 
 Product (``*``)
@@ -267,7 +267,7 @@ Scalar multiplication (``*``)
      let v1 = v3(1.0, 1.0, 1.0);
      let v2 = v1 * 2;
      format-out("%=\n", v2);
-     // v3(2.0, 2.0, 2.0)
+     // (2.0, 2.0, 2.0)
 
 
 Division (``/``)
@@ -290,6 +290,101 @@ Division (``/``)
      let v1 = v3(3.0, 3.0, 3.0);
      let v2 = v1 / 3;
      format-out("%=\n", v2);
-     // v3(1.0, 1.0, 1.0)
+     // (1.0, 1.0, 1.0)
 
+Other operations
+================
 
+squared
+~~~~~~~
+
+.. function:: squared
+
+   x ^ 2 + y ^ 2 + z ^ 2.	      
+
+   :signature: squared *v* => (*n*)
+
+   :parameter v: An instance of :class:`<v3>`.
+   :value n: An instance of :drm:`<float>`
+   :example:
+
+   .. code-block:: dylan
+
+     let v = v3(2.0, 2.0, 2.0);
+     let s = squared(v);
+     // 12.0
+
+magnitude
+~~~~~~~~~
+
+.. function:: magnitude
+
+   Scalar magnitude of a vector. Also called *length*.  It's
+   calculated as the squared root of the squared vector.
+
+   :signature: magnitude *v* => (*n*)
+
+   :parameter v: An instance of :class:`<v3>`.
+   :value n: An instance of :drm:`<float>`
+
+cross-product
+~~~~~~~~~~~~~
+
+.. function:: cross-product
+
+   Takes the cross product of vector *u* and *v* and returns a vector
+   perpendicular to both *u* and *v*.
+
+   :signature: cross-product *u* *v* => (*c*)
+
+   :parameter u: An instance of :class:`<v3>`.
+   :parameter v: An instance of :class:`<v3>`.
+   :value c: An instance of :class:`<v3>`.      
+
+unit?
+~~~~~
+
+.. function:: unit?
+
+   Is the magnitude of the vector 1.0?
+
+   :signature: unit? *u* => (*is-unit?*)
+
+   :parameter u: An instance of :class:`<v3>`.
+   :value is-unit: An instance of :drm:`<boolean>`
+
+zero?
+~~~~~
+
+.. method:: zero?
+   :specializer: <v3>
+
+   Are all the components of the vector 0?
+
+   :signature: zero? *u* => (*zero?*)
+
+   :parameter u: An instance of :class:`<v3>`.
+   :value zero?: An instance of :drm:`<boolean>`
+
+normalize
+~~~~~~~~~
+
+.. function:: normalize
+
+   :signature: normalize *u* => (*normalized*)
+
+   :parameter u: An instance of :class:`<v3>`.
+   :value normalized: An instance of :class:`<v3>`
+
+distance
+~~~~~~~~
+
+.. function:: distance
+
+   Magnitude of *u* - *v*	      
+
+   :signature: distance *u* *v* => (*distance*)
+
+   :parameter u: An instance of :class:`<v3>`.
+   :parameter v: An instance of :class:`<v3>`.
+   :value distance: An instance of :class:`<v3>`		      
