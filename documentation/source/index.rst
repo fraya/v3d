@@ -102,6 +102,12 @@ The arrows between the modules are the dependencies.
 	 v3d -> transcendentals;
     }
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   v3d
+   
 Index and Search
 ================
 
