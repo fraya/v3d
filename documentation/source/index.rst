@@ -6,14 +6,6 @@ A simple 3D vector library
 
 ``v3d`` is a simple vector library with the common operations.
    
-.. toctree::
-   :maxdepth: 2
-
-   v3d
-   
-.. contents::
-   :depth: 3
-
 Usage
 =====
 
