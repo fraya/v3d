@@ -84,8 +84,13 @@ end;
 
 define test test-normalize ()
   let v1 = v3(3.0, 1.0, 2.0);
-  assert-equal(normalize(v1), unitize(v1));
   assert-true(similar(magnitude(normalize(v1)), 1.0));
+end;
+
+define test test-distance ()
+  let v = v3(1.0, 0.0, 5.0);
+  let w = v3(0.0, 2.0, 4.0);
+  assert-equal(sqrt(6.0), distance(v, w));
 end;
 
 run-test-application();
