@@ -33,24 +33,11 @@ jobs:
       - name: Build docs
         uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "documentation/"
           pre-build-command: "echo furo >> documentation/requirements.txt"
+          docs-folder: "documentation/"
 
-      - name: Commit documentation changes
-        run: |
-          git clone https://github.com/fraya/v3d.git --branch gh-pages --single-branch gh-pages
-          cp -r documentation/build/html/* gh-pages
-          cd gh-pages
-          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config --local user.name "${GITHUB_ACTOR}"
-          git add .
-          git commit -m "Update documentation ${GITHUB_SHA}" -a || true
-          # The above command will fail if no changes were present, so we ignore
-          # the return code.
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Deploy documents to GH pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          directory: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          folder: documentation/build/html
