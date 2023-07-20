@@ -30,6 +30,15 @@ end;
 define constant $v3-zero 
   = make(<v3>);
 
+define sealed domain \= (<v3>, <v3>);
+define sealed domain \+ (<v3>, <v3>);
+define sealed domain \- (<v3>, <v3>);
+define sealed domain negative (<v3>);
+define sealed domain \* (<v3>, <v3>);
+define sealed domain \* (<v3>, <number>);
+define sealed domain \/ (<v3>, <number>);
+define sealed domain zero? (<v3>);
+
 define method \=
     (a :: <v3>, b :: <v3>) => (equal? :: <boolean>)
   similar(a.v-x, b.v-x) & similar(a.v-y, b.v-y) & similar(a.v-z, b.v-z)
