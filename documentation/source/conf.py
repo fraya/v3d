@@ -12,7 +12,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../sphinx-extensions/sphinxcontrib'))
+sys.path.insert(0, os.path.abspath('../../_packages/sphinx-extensions/0.2.0/src/sphinxcontrib'))
+
 import dylan.themes as dylan_themes
 
 
@@ -49,7 +50,7 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'furo'
+html_theme = 'alabaster'
 # html_theme = dylan_themes.get_html_theme_default()
 
 # Add any paths that contain custom static files (such as style sheets) here,
