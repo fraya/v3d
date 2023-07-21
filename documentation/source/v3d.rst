@@ -248,7 +248,7 @@ Scalar multiplication (``*``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. method:: *
-   :specializer: <v3>, <number>
+   :specializer: <v3>, <float>
 
    Product scalar of a vector by a number.
 
@@ -258,14 +258,14 @@ Scalar multiplication (``*``)
    :signature: * *a* *n* => (product)
 
    :parameter a: An instance of :class:`<v3>`.
-   :parameter n: An instance of :drm:`<number>`.
+   :parameter n: An instance of :drm:`<float>`.
    :value product: An instance of :class:`<v3>`.
    :example:
 
    .. code-block:: dylan
 
      let v1 = v3(1.0, 1.0, 1.0);
-     let v2 = v1 * 2;
+     let v2 = v1 * 2.0;
      format-out("%=\n", v2);
      // (2.0, 2.0, 2.0)
 
@@ -274,21 +274,21 @@ Division (``/``)
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. method:: /
-   :specializer: <v3>, <number>
+   :specializer: <v3>, <float>
 
    Divide a vector by a number.
 
    :signature: * *a* *n* => (division)
 
    :parameter a: An instance of :class:`<v3>`.
-   :parameter n: An instance of :drm:`<number>`.
+   :parameter n: An instance of :drm:`<float>`.
    :value division: An instance of :drm:`<float>`.
    :example:
 
    .. code-block:: dylan
 
      let v1 = v3(3.0, 3.0, 3.0);
-     let v2 = v1 / 3;
+     let v2 = v1 / 3.0;
      format-out("%=\n", v2);
      // (1.0, 1.0, 1.0)
 

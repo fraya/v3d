@@ -43,7 +43,7 @@ end;
 define test test-scalar ()
   let v1 = v3(2.0, 2.0, 2.0);
   let v2 = v3(6.0, 6.0, 6.0);
-  assert-equal(v1 * 3, v2);
+  assert-equal(v1 * 3.0, v2);
 end;
 
 define test test-identity-scalar ()
@@ -54,7 +54,7 @@ end;
 define test test-div ()
   let v1 = v3(6.0, 6.0, 6.0);
   let v2 = v3(3.0, 3.0, 3.0);
-  assert-equal(v1 / 2, v2);
+  assert-equal(v1 / 2.0, v2);
 end;
 
 define test test-magnitude ()

@@ -35,8 +35,8 @@ define sealed domain \+ (<v3>, <v3>);
 define sealed domain \- (<v3>, <v3>);
 define sealed domain negative (<v3>);
 define sealed domain \* (<v3>, <v3>);
-define sealed domain \* (<v3>, <number>);
-define sealed domain \/ (<v3>, <number>);
+define sealed domain \* (<v3>, <float>);
+define sealed domain \/ (<v3>, <float>);
 define sealed domain zero? (<v3>);
 
 define method \=
@@ -60,12 +60,12 @@ define method negative
 end;
 
 define method \*
-    (p :: <v3>, n :: <number>) => (product :: <v3>)
+    (p :: <v3>, n :: <float>) => (product :: <v3>)
   make(<v3>, x: p.v-x * n, y: p.v-y * n, z: p.v-z * n)
 end;
 
 define method \/
-    (p :: <v3>, n :: <number>) => (division :: <v3>)
+    (p :: <v3>, n :: <float>) => (division :: <v3>)
   make(<v3>, x: p.v-x / n, y: p.v-y / n, z: p.v-z / n)
 end;
 
