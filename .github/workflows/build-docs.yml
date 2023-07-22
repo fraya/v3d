@@ -27,7 +27,7 @@ jobs:
       - name: Install sphinx-extensions dependencies
         run: |
           dylan install -v 0.2.0 sphinx-extensions
-          cp -r /home/runner/dylan/pkg /home/runner/work/v3d/v3d/_packages/ 
+          cp -r /home/runner/dylan/pkg ${{ github.workspace }}/_packages/ 
      
       - name: Build docs
         uses: ammaraskar/sphinx-action@master
