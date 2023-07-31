@@ -289,7 +289,7 @@ Scalar multiplication (``*``)
      let v1 = v3(1.0, 1.0, 1.0);
      let v2 = 2.0 * v1;
      format-out("%=\n", v2);
-     // (2.0, 2.0, 2.0)     
+     // (2.0, 2.0, 2.0)
 
 
 Division (``/``)
@@ -322,7 +322,7 @@ squared
 
 .. function:: squared
 
-   x ^ 2 + y ^ 2 + z ^ 2.	      
+   x ^ 2 + y ^ 2 + z ^ 2.
 
    :signature: squared *v* => (*n*)
 
@@ -333,7 +333,7 @@ squared
    .. code-block:: dylan
 
      let v = v3(2.0, 2.0, 2.0);
-     let s = squared(v);
+     let s = v.squared;
      // 12.0
 
 magnitude
@@ -349,6 +349,13 @@ magnitude
    :parameter v: An instance of :class:`<v3>`.
    :value n: An instance of :drm:`<float>`
 
+   .. code-block:: dylan
+
+     let v = v3(0.0, 3.0, 4.0);
+     assert-equal(v.magnitude, 5.0);
+     let u = v3(2.0, 3.0, 4.0);
+     assert-equal(u.magnitude, sqrt(29.0));
+
 cross-product
 ~~~~~~~~~~~~~
 
@@ -361,7 +368,14 @@ cross-product
 
    :parameter u: An instance of :class:`<v3>`.
    :parameter v: An instance of :class:`<v3>`.
-   :value c: An instance of :class:`<v3>`.      
+   :value c: An instance of :class:`<v3>`.
+
+   .. code-block:: dylan
+
+     let u = v3(3.0, -3.0, 1.0);
+     let v = v3(4.0, 9.0, 2.0);
+     let r = v3(-15.0, -2.0, 39.0);
+     assert-equal(cross-product(u, v), r);
 
 unit?
 ~~~~~
@@ -374,6 +388,11 @@ unit?
 
    :parameter u: An instance of :class:`<v3>`.
    :value is-unit: An instance of :drm:`<boolean>`
+
+   .. code-block:: dylan
+
+     let v = v3(0.0, 3.0, 4.0);
+     assert-false(v.unit?)
 
 zero?
 ~~~~~
@@ -388,6 +407,11 @@ zero?
    :parameter u: An instance of :class:`<v3>`.
    :value zero?: An instance of :drm:`<boolean>`
 
+   .. code-block:: dylan
+
+     let v = make(<v3>);
+     assert-true(v.zero?)
+
 normalize
 ~~~~~~~~~
 
@@ -398,15 +422,20 @@ normalize
    :parameter u: An instance of :class:`<v3>`.
    :value normalized: An instance of :class:`<v3>`
 
+  .. code-block:: dylan
+
+    let v1 = v3(3.0, 1.0, 2.0);
+    assert-true(similar(v1.normalize.magnitude, 1.0));
+
 distance
 ~~~~~~~~
 
 .. function:: distance
 
-   Magnitude of *u* - *v*	      
+   Magnitude of *u* - *v*
 
    :signature: distance *u* *v* => (*distance*)
 
    :parameter u: An instance of :class:`<v3>`.
    :parameter v: An instance of :class:`<v3>`.
-   :value distance: An instance of :class:`<v3>`		      
+   :value distance: An instance of :class:`<v3>`

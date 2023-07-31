@@ -5,9 +5,9 @@ Copyright: (c) 2020
 
 define test test-zero ()
   let v = make(<v3>, x: 0.0, y: 0.0, z: 0.0);
-  assert-true(zero?(v));
+  assert-true(v.zero?);
   assert-equal(v, $v3-zero);
-  assert-true(zero?($v3-zero));
+  assert-true($v3-zero.zero?);
 end;
 
 define test test-addition ()
@@ -59,9 +59,9 @@ end;
 
 define test test-magnitude ()
   let v = v3(0.0, 3.0, 4.0);
-  assert-equal(magnitude(v), 5.0);
+  assert-equal(v.magnitude, 5.0);
   let u = v3(2.0, 3.0, 4.0);
-  assert-equal(magnitude(u), sqrt(29.0));
+  assert-equal(u.magnitude, sqrt(29.0));
 end;
 
 define test test-dot-product ()
@@ -72,7 +72,7 @@ end;
 
 define test test-squared ()
   let v = v3(2.0, 2.0, 2.0);
-  assert-equal(squared(v), 12.0);
+  assert-equal(v.squared, 12.0);
 end;
 
 define test test-cross-product ()
@@ -84,7 +84,7 @@ end;
 
 define test test-normalize ()
   let v1 = v3(3.0, 1.0, 2.0);
-  assert-true(similar(magnitude(normalize(v1)), 1.0));
+  assert-true(similar(v1.normalize.magnitude, 1.0));
 end;
 
 define test test-distance ()
