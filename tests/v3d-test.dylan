@@ -10,28 +10,21 @@ define test test-zero ()
   assert-true(zero?($v3-zero));
 end;
 
-define test test-plus ()
+define test test-addition ()
   let v1 = v3(1.0, 1.0, 1.0);
   let v2 = v3(2.0, 2.0, 2.0);
   let v3 = v3(3.0, 3.0, 3.0);
-  assert-equal(v1 + v2, v3);
-end;
 
-define test test-negated ()
-  let v = v3(1.0, 2.0, 3.0);
-  let r = v3(-1.0, -2.0, -3.0);
-  assert-equal(-v, r);
-end;
-
-define test test-commutativity ()
-  let u = v3(1.0, 2.0, 3.0);
-  let v = v3(4.0, 5.0, 6.0);
-  assert-equal(u + v, v + u);
-end;
-
-define test test-inverse-element-of-addition ()
-  let v = v3(1.0, 2.0, 3.0);
-  assert-equal(v + (-v), $v3-zero);
+  assert-equal(v1 + v2, v3,
+	       "Addition of vectors");
+  assert-equal(v1 + v2, v2 + v1,
+	       "Addition is commutative");
+  assert-equal((v1 + v2) + v3, v1 + (v2 + v3),
+	       "Addition is associative");
+  assert-equal($v3-zero + v1, v1,
+	       "0 is and additive identity");
+  assert-equal($v3-zero, v1 + (-v1),
+	       "Additive inverses exists");
 end;
 
 define test test-minus ()
@@ -43,12 +36,19 @@ end;
 define test test-scalar ()
   let v1 = v3(2.0, 2.0, 2.0);
   let v2 = v3(6.0, 6.0, 6.0);
-  assert-equal(v1 * 3.0, v2);
-end;
+  let a = 2.0;
+  let b = 3.0;
 
-define test test-identity-scalar ()
-  let v1 = v3(2.0, 2.0, 2.0);
-  assert-equal(v1 * 1.0, v1);
+  assert-equal(v1 * 3.0, v2,
+	       "Scalar multiplication");
+  assert-equal(v1 * 1.0, v1,
+	       "1 is a multiplicative identity");
+  assert-equal((a * b) * v1, a * (b * v1),
+	       "Scalar multiplication is associative");
+  assert-equal(a * (v1 + v2), a * v1 + a * v2,
+	       "Scalar multiplication distributes over vector addition");
+  assert-equal((a + b) * v1, a * v1 + b * v1,
+	       "Scalar multiplication distributes over scalar addition");
 end;
 
 define test test-div ()

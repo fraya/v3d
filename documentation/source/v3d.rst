@@ -269,6 +269,28 @@ Scalar multiplication (``*``)
      format-out("%=\n", v2);
      // (2.0, 2.0, 2.0)
 
+.. method:: *
+   :specializer: <float>, <v3>
+
+   Product scalar of a number by vector.
+
+   Let *v = (x1, y1, z1)* and let *k* be scalar. The scalar
+   multiplication of *kv = (kx1, ky1, kz1)*.
+
+   :signature: * *n* *a* => (product)
+
+   :parameter n: An instance of :drm:`<float>`.
+   :parameter a: An instance of :class:`<v3>`.
+   :value product: An instance of :class:`<v3>`.
+   :example:
+
+   .. code-block:: dylan
+
+     let v1 = v3(1.0, 1.0, 1.0);
+     let v2 = 2.0 * v1;
+     format-out("%=\n", v2);
+     // (2.0, 2.0, 2.0)     
+
 
 Division (``/``)
 ~~~~~~~~~~~~~~~~~~~~~~
