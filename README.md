@@ -4,6 +4,6 @@
 
 A small library for 3 dimension vectors with x, y and z coordenates
 
-## Documention
+## Documentation
 
 See the docs at [https://fraya.github.io/v3d](https://fraya.github.io/v3d)
