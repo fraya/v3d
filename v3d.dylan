@@ -1,4 +1,4 @@
-Module:     v3d
+Module:     v3d-impl
 Synopsis:   Three dimension vector
 Author:     Fernando Raya
 Copyright:  (c) 2020
