@@ -36,7 +36,7 @@ The module ``v3d`` exports the following features:
 
 - Utility: ``$v3-zero`` and ``similar``.
 
-See a detailed explanation with examples in the *v3d library* link.
+See a detailed explanation with examples in the :doc:`v3d` link.
 
 .. note::
 
@@ -92,7 +92,6 @@ The arrows between the modules are the dependencies.
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
 
    v3d
    
