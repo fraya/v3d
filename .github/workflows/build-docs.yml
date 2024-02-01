@@ -26,22 +26,15 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - name: Install Open Dylan
-        uses: dylan-lang/install-opendylan@v3
+      - name: Generate docs
+        uses: addnab/docker-run-action@v3
         with:
-          version: 2023.1
-          tag: v2023.1.0
+          image: ghcr.io/fraya/dylan-docs:main
+          options: -v ${{ github.workspace }}/documentation:/docs
+          run: make html
 
-      - name: Install sphinx-extensions dependencies
-        run: |
-          dylan update
-
-      - name: Build docs
-        uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "documentation/"
-
-      - name: Deploy documents to GH pages
+      - name: Deploy docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: documentation/build/html
+          folder: docs/build/html
+          target-folder: docs/
