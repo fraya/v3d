@@ -19,8 +19,8 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-    
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Add OD to PATH
         run: |
@@ -59,4 +59,3 @@ jobs:
 
       - name: Run tests
         run: _build/bin/v3d-test
-
