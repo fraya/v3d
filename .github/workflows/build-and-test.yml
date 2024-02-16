@@ -28,7 +28,7 @@ jobs:
 
       - name: Cache OD 2023.1
         id: cache-2023-1
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             /home/runner/work/v3d/opendylan-2023.1
@@ -36,7 +36,7 @@ jobs:
 
       - name: Cache packages
         id: cache-packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ./_packages
