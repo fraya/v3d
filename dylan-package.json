@@ -6,7 +6,7 @@
     "dependencies": [  ],
     "dev-dependencies": [
         "sphinx-extensions@0.2.0",
-        "testworks@2.1"
+        "testworks@3.0"
     ],
     "version": "0.2.0",
     "url": "https://github.com/fraya/v3d",
