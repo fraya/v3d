@@ -48,29 +48,43 @@ Library structure and dependencies
 ==================================
 
 The libraries used by the project are shown with the modules inside.
-The arrows between the modules are the dependencies.
+The arrows between the libraries are the dependencies.
 
 .. graphviz::
-   :caption: Libraries and modules used
+   :caption: Libraries (light box) and modules (dark box) used
 
    digraph G {
-         bgcolor="#00000000";
+         bgcolor="#eceff1";
 	 graph [compound=true];
-	 fontname = "Helvetica,Arial,sans-serif";
-	 node [fontname="Helvetica,Arial,sans-serif";shape=box;]
-	 edge [fontname="Helvetica,Arial,sans-serif"]
+	 fontname = "times-bold";
+	 node [
+	   fontname="Arial";
+	   shape="component";
+	   color="#90a4ae";
+	   fontcolor="#eceff1";
+	   style="filled";
+	 ]
+	 edge [
+	   fontname="Arial";
+	   color="#37474f";
+	   style="dashed";
+	 ]
 	 ranksep = 1.0;
 	
 	 subgraph cluster_v3d {
-	   color=lightgrey;
-	   label="v3d library";
-	   "v3d-impl";
+	   fontcolor="#37474f";
+	   color="#cfd8dc";
+	   style="filled";
+	   shape="component";
+	   label="v3d";
 	   v3d;
 	 };
 	
 	 subgraph cluster_cd {
-	   color=lightgrey;
-	   label="common-dylan library";
+	   fontcolor="#263238";
+	   color="#cfd8dc";
+	   style="filled";
+	   label="common-dylan";
 	   rank = same;
 	   rankdir = LR;
 	   "common-dylan";
@@ -78,16 +92,18 @@ The arrows between the modules are the dependencies.
          };
 	
          subgraph cluster_io {
-           color=lightgrey;
-	   label="io library";
+	   fontcolor="#263238";
+	   color="#cfd8dc";
+	   style="filled";
+	   label="io";
 	   rank = same;
 	   format;
 	   streams;
 	   print;
 	 };
 
-	 "v3d-impl" -> streams         [ltail=cluster_v3d, lhead=cluster_io];
-	 "v3d-impl" -> "common-dylan"  [ltail=cluster_v3d, lhead=cluster_cd];
+	 "v3d" -> streams         [ltail=cluster_v3d, lhead=cluster_io];
+	 "v3d" -> "common-dylan"  [ltail=cluster_v3d, lhead=cluster_cd];
     }
 
 .. toctree::

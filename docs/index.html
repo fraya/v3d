@@ -227,26 +227,40 @@ setters.</p>
 <section id="library-structure-and-dependencies">
 <h2>Library structure and dependencies<a class="headerlink" href="#library-structure-and-dependencies" title="Permalink to this heading">#</a></h2>
 <p>The libraries used by the project are shown with the modules inside.
-The arrows between the modules are the dependencies.</p>
+The arrows between the libraries are the dependencies.</p>
 <figure class="align-default" id="id1">
-<div class="graphviz"><img src="_images/graphviz-1ae30d99aca03f15d366ae537f329a061db6d3ce.png" alt="digraph G {
-      bgcolor=&quot;#00000000&quot;;
+<div class="graphviz"><img src="_images/graphviz-42b92fb4c94c7e871d021bbcba6ad323cd662a9d.png" alt="digraph G {
+      bgcolor=&quot;#eceff1&quot;;
       graph [compound=true];
-      fontname = &quot;Helvetica,Arial,sans-serif&quot;;
-      node [fontname=&quot;Helvetica,Arial,sans-serif&quot;;shape=box;]
-      edge [fontname=&quot;Helvetica,Arial,sans-serif&quot;]
+      fontname = &quot;times-bold&quot;;
+      node [
+        fontname=&quot;Arial&quot;;
+        shape=&quot;component&quot;;
+        color=&quot;#90a4ae&quot;;
+        fontcolor=&quot;#eceff1&quot;;
+        style=&quot;filled&quot;;
+      ]
+      edge [
+        fontname=&quot;Arial&quot;;
+        color=&quot;#37474f&quot;;
+        style=&quot;dashed&quot;;
+      ]
       ranksep = 1.0;
 
       subgraph cluster_v3d {
-        color=lightgrey;
-        label=&quot;v3d library&quot;;
-        &quot;v3d-impl&quot;;
+        fontcolor=&quot;#37474f&quot;;
+        color=&quot;#cfd8dc&quot;;
+        style=&quot;filled&quot;;
+        shape=&quot;component&quot;;
+        label=&quot;v3d&quot;;
         v3d;
       };
 
       subgraph cluster_cd {
-        color=lightgrey;
-        label=&quot;common-dylan library&quot;;
+        fontcolor=&quot;#263238&quot;;
+        color=&quot;#cfd8dc&quot;;
+        style=&quot;filled&quot;;
+        label=&quot;common-dylan&quot;;
         rank = same;
         rankdir = LR;
         &quot;common-dylan&quot;;
@@ -254,19 +268,21 @@ The arrows between the modules are the dependencies.</p>
       };
 
       subgraph cluster_io {
-        color=lightgrey;
-        label=&quot;io library&quot;;
+        fontcolor=&quot;#263238&quot;;
+        color=&quot;#cfd8dc&quot;;
+        style=&quot;filled&quot;;
+        label=&quot;io&quot;;
         rank = same;
         format;
         streams;
         print;
       };
 
-      &quot;v3d-impl&quot; -&gt; streams         [ltail=cluster_v3d, lhead=cluster_io];
-      &quot;v3d-impl&quot; -&gt; &quot;common-dylan&quot;  [ltail=cluster_v3d, lhead=cluster_cd];
+      &quot;v3d&quot; -&gt; streams         [ltail=cluster_v3d, lhead=cluster_io];
+      &quot;v3d&quot; -&gt; &quot;common-dylan&quot;  [ltail=cluster_v3d, lhead=cluster_cd];
  }" class="graphviz" /></div>
 <figcaption>
-<p><span class="caption-text">Libraries and modules used</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Libraries (light box) and modules (dark box) used</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="toctree-wrapper compound">
