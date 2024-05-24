@@ -93,4 +93,18 @@ define test test-distance ()
   expect-equal(sqrt(6.0), distance(v, w));
 end;
 
+define suite suite-operations ()
+  test test-zero;
+  test test-addition;
+  test test-minus;
+  test test-scalar;
+  test test-div;
+  test test-magnitude;
+  test test-dot-product;
+  test test-squared;
+  test test-cross-product;
+  test test-normalize;
+  test test-distance;
+end suite;
+
 run-test-application();
