@@ -55,10 +55,10 @@ jobs:
         run: dylan update
 
       - name: Build tests
-        run: dylan build v3d-test
+        run: dylan build v3d-test-suite
 
       - name: Run tests
-        run: _build/bin/v3d-test --progress none --report surefire > _build/TEST-v3d.xml
+        run: _build/bin/v3d-test-suite --progress none --report surefire > _build/TEST-v3d.xml
 
       - name: Publish Test Report
         if: success() || failure()

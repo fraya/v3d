@@ -1,4 +1,4 @@
-Module: v3d-test
+Module: v3d-test-suite
 Synopsis: Tests for v3d library
 Author: Fernando Raya
 Copyright: (c) 2020
