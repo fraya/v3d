@@ -16,5 +16,7 @@ define module v3d-test-suite
   use testworks;
   use v3d;
 
-  export suite-operations;
+  export
+    suite-operations,
+    suite-benchmark-operations;
 end module v3d-test-suite;

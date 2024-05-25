@@ -107,4 +107,44 @@ define suite suite-operations ()
   test test-distance;
 end suite;
 
+define constant $times = 10000000;
+
+define benchmark addition-benchmark ()
+  let x = v3(3.0, -1.0, 5.0);
+  let y = v3(2.0, 1.0, -1.0);
+  for (i from 0 below $times)
+    let z = x + y
+  end
+end benchmark;
+
+define benchmark distance-benchmark ()
+  let v = v3(1.0, 0.0, 5.0);
+  let w = v3(0.0, 2.0, 4.0);
+  for (i from 0 below $times)
+    let d = distance(v, w)
+  end
+end benchmark;
+
+define benchmark benchmark-cross-product ()
+  let u = v3(3.0, -3.0, 1.0);
+  let v = v3(4.0, 9.0, 2.0);
+  for (i from 0 below $times)
+    let z = cross-product(u, v)
+  end
+end;
+
+define benchmark benchmark-dot-product ()
+  let u = v3(1.0, 3.0, -5.0);
+  let v = v3(4.0, -2.0, -1.0);
+  for (i from 0 below $times)
+    let z = u * v;
+  end
+end;
+
+define suite suite-benchmark-operations ()
+  benchmark addition-benchmark;
+  benchmark benchmark-cross-product;
+  benchmark benchmark-dot-product;
+end suite;
+
 run-test-application();

@@ -58,7 +58,7 @@ jobs:
         run: dylan build v3d-test-suite
 
       - name: Run tests
-        run: _build/bin/v3d-test-suite --progress none --report surefire > _build/TEST-v3d.xml
+        run: _build/bin/v3d-test-suite --tag=-benchmark --progress none --report surefire > _build/TEST-v3d.xml
 
       - name: Publish Test Report
         if: success() || failure()
