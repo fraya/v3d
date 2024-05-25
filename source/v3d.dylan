@@ -10,21 +10,21 @@ define method similar
   abs(x - y) < epsilon
 end;
 
-define sealed class <v3> (<object>)
-  slot v-x :: <float> = 0.0, init-keyword: x:, setter: #f;
-  slot v-y :: <float> = 0.0, init-keyword: y:, setter: #f;
-  slot v-z :: <float> = 0.0, init-keyword: z:, setter: #f;
-end class <v3>;
+define constant <v3>
+  = limited(<vector>, of: <float>, size: 3);
+
+define inline function v-x (v :: <v3>) => (x :: <float>) v[0] end;
+define inline function v-y (v :: <v3>) => (y :: <float>) v[1] end;
+define inline function v-z (v :: <v3>) => (z :: <float>) v[2] end;
 
 define inline function v3
     (x :: <float>, y :: <float>, z :: <float>)
  => (v :: <v3>)
-  make(<v3>, x: x, y: y, z: z)
-end;
-
-define method print-object
-    (v :: <v3>, s :: <stream>) => ()
-  format(s, "(%=, %=, %=)", v.v-x, v.v-y, v.v-z)
+  let v = make(<v3>, fill: 0.0);
+  v[0] := x;
+  v[1] := y;
+  v[2] := z;
+  v
 end;
 
 define constant $v3-zero 
