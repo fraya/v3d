@@ -4,7 +4,7 @@ Author: Fernando Raya
 Copyright: (c) 2020
 
 define test test-zero ()
-  let v = make(<v3>, x: 0.0, y: 0.0, z: 0.0);
+  let v = v3(0.0, 0.0, 0.0);
   expect(v.zero?);
   expect-equal(v, $v3-zero);
   expect($v3-zero.zero?);

@@ -28,7 +28,7 @@ define method print-object
 end;
 
 define constant $v3-zero 
-  = make(<v3>);
+  = v3(0.0, 0.0, 0.0);
 
 define sealed domain \= (<v3>, <v3>);
 define sealed domain \+ (<v3>, <v3>);
@@ -47,22 +47,22 @@ end;
 
 define method \+
     (a :: <v3>, b :: <v3>) => (sum :: <v3>)
-  make(<v3>, x: a.v-x + b.v-x, y: a.v-y + b.v-y, z: a.v-z + b.v-z)  
+  v3(a.v-x + b.v-x, a.v-y + b.v-y, a.v-z + b.v-z)  
 end;
 
 define method \-
     (a :: <v3>, b :: <v3>) => (difference :: <v3>)
-  make(<v3>, x: a.v-x - b.v-x, y: a.v-y - b.v-y, z: a.v-z - b.v-z)
+  v3(a.v-x - b.v-x, a.v-y - b.v-y, a.v-z - b.v-z)
 end;
 
 define method negative
     (p :: <v3>) => (negated :: <v3>)
-  make(<v3>, x: -p.v-x, y: -p.v-y, z: -p.v-z)
+  v3(-p.v-x, -p.v-y, -p.v-z)
 end;
 
 define method \*
     (p :: <v3>, n :: <float>) => (product :: <v3>)
-  make(<v3>, x: p.v-x * n, y: p.v-y * n, z: p.v-z * n)
+  v3(p.v-x * n, p.v-y * n, p.v-z * n)
 end;
 
 define method \*
@@ -72,7 +72,7 @@ end;
 
 define method \/
     (p :: <v3>, n :: <float>) => (division :: <v3>)
-  make(<v3>, x: p.v-x / n, y: p.v-y / n, z: p.v-z / n)
+  v3(p.v-x / n, p.v-y / n, p.v-z / n)
 end;
 
 define method \*
@@ -92,10 +92,9 @@ end;
 
 define function cross-product
     (a :: <v3>, b :: <v3>) => (result :: <v3>)
-  make(<v3>,
-       x: a.v-y * b.v-z - a.v-z * b.v-y,
-       y: a.v-z * b.v-x - a.v-x * b.v-z,
-       z: a.v-x * b.v-y - a.v-y * b.v-x)
+  v3(a.v-y * b.v-z - a.v-z * b.v-y,
+     a.v-z * b.v-x - a.v-x * b.v-z,
+     a.v-x * b.v-y - a.v-y * b.v-x)
 end;
 
 define function unit?
