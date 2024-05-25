@@ -143,6 +143,7 @@ end;
 
 define suite suite-benchmark-operations ()
   benchmark addition-benchmark;
+  benchmark distance-benchmark;
   benchmark benchmark-cross-product;
   benchmark benchmark-dot-product;
 end suite;
