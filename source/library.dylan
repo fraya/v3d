@@ -21,30 +21,33 @@ define module v3d
   // class and accessors
 
   create
-    <v3>,
-    v-x,
-    v-y,
-    v-z;
+    <v3f>,
+    v3f,
+    $v3f-zero,
+    v3f-x,
+    v3f-y,
+    v3f-z,
+    v3f-add,
+    v3f-negative;
 
   // operations
 
-  create
-    squared,
-    magnitude,
-    cross-product,
-    unit?,
-    normalize,
-    distance;
+  //create
+  //   squared,
+  //   magnitude,
+  //   cross-product,
+  //   unit?,
+  //   normalize,
+  //   distance;
 
   // constants
 
-  create
-    $v3-zero;
+  // create
+  //   $v3-zero;
 
   // utility
 
   create
-    v3,
     similar;
 
 end module v3d;

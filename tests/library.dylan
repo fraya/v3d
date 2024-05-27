@@ -6,7 +6,7 @@ define library v3d-test-suite
   use testworks;
   use v3d;
 
-  export v3d-test-suite;
+//  export v3d-test-suite;
 end library v3d-test;
 
 define module v3d-test-suite
