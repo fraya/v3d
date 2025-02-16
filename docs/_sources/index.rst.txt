@@ -9,13 +9,12 @@ A simple 3D vector library
 Usage
 =====
 
-If you have **Open Dylan 2022.1 or later**, the program
-:program:`dylan` is already installed as part of that release.  Create
-your new project with ``dylan new application <name>``, and edit the file
-``dylan-package.json`` created. Just add ``v3d`` in ``dependencies``.
+Create your new project with ``deft new application <name>``, and edit
+the file ``dylan-package.json`` created. Just add ``v3d`` in
+``dependencies``.
 
-To know more about :program:`dylan` package manager visit
-`Dylan tool <https://opendylan.org/documentation/dylan-tool/>`_.
+To know more about :program:`deft` package manager visit
+`Deft tool <https://package.opendylan.org/deft/>`_.
 
 Quick summary of ``v3d``
 ========================
