@@ -51,9 +51,13 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'furo'
-# html_theme = dylan_themes.get_html_theme_default()
+html_theme_options = {
+    'source_repository': 'https://github.com/fraya/v3d',
+    'source_branch': 'main',
+    'source_directory': 'documentation/source',
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+# html_static_path = ['_static']
