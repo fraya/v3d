@@ -935,29 +935,80 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 <li><a class="reference internal" href="#">The v3d library</a><ul>
 <li><a class="reference internal" href="#v3-class"><code class="docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code> class</a><ul>
 <li><a class="reference internal" href="#creation-with-make">Creation with <code class="docutils literal notranslate"><span class="pre">make</span></code></a></li>
-<li><a class="reference internal" href="#creation-with-v3">Creation with <code class="docutils literal notranslate"><span class="pre">v3</span></code></a></li>
+<li><a class="reference internal" href="#creation-with-v3">Creation with <code class="docutils literal notranslate"><span class="pre">v3</span></code></a><ul>
+<li><a class="reference internal" href="#v3d:v3d:v3"><code class="docutils literal notranslate"><span class="pre">v3</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#dimension-accessors-x-y-and-z">Dimension accessors (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dimension-accessors-x-y-and-z">Dimension accessors (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:v-x([v3])"><code class="docutils literal notranslate"><span class="pre">v-x(&lt;v3&gt;)</span></code></a></li>
+<li><a class="reference internal" href="#v3d:v3d:v-y([v3])"><code class="docutils literal notranslate"><span class="pre">v-y(&lt;v3&gt;)</span></code></a></li>
+<li><a class="reference internal" href="#v3d:v3d:v-z([v3])"><code class="docutils literal notranslate"><span class="pre">v-z(&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#vector-zero-v3-zero">Vector zero (<code class="docutils literal notranslate"><span class="pre">$v3-zero</span></code>)</a></li>
 <li><a class="reference internal" href="#infix-operations">Infix operations</a><ul>
-<li><a class="reference internal" href="#equals">Equals (<code class="docutils literal notranslate"><span class="pre">=</span></code>)</a></li>
-<li><a class="reference internal" href="#addition">Addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>)</a></li>
-<li><a class="reference internal" href="#substraction">Substraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</a></li>
-<li><a class="reference internal" href="#negative">Negative (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</a></li>
-<li><a class="reference internal" href="#product">Product (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</a></li>
-<li><a class="reference internal" href="#scalar-multiplication">Scalar multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</a></li>
-<li><a class="reference internal" href="#division">Division (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</a></li>
+<li><a class="reference internal" href="#equals">Equals (<code class="docutils literal notranslate"><span class="pre">=</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:=([v3],[v3])"><code class="docutils literal notranslate"><span class="pre">=(&lt;v3&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#addition">Addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:+([v3],[v3])"><code class="docutils literal notranslate"><span class="pre">+(&lt;v3&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#substraction">Substraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:-([v3],[v3])"><code class="docutils literal notranslate"><span class="pre">-(&lt;v3&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#negative">Negative (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:-([v3])"><code class="docutils literal notranslate"><span class="pre">-(&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#product">Product (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:*([v3],[v3])"><code class="docutils literal notranslate"><span class="pre">*(&lt;v3&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scalar-multiplication">Scalar multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:*([v3],[float])"><code class="docutils literal notranslate"><span class="pre">*(&lt;v3&gt;,</span> <span class="pre">&lt;float&gt;)</span></code></a></li>
+<li><a class="reference internal" href="#v3d:v3d:*([float],[v3])"><code class="docutils literal notranslate"><span class="pre">*(&lt;float&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#division">Division (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:/([v3],[float])"><code class="docutils literal notranslate"><span class="pre">/(&lt;v3&gt;,</span> <span class="pre">&lt;float&gt;)</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#other-operations">Other operations</a><ul>
-<li><a class="reference internal" href="#squared">squared</a></li>
-<li><a class="reference internal" href="#magnitude">magnitude</a></li>
-<li><a class="reference internal" href="#cross-product">cross-product</a></li>
-<li><a class="reference internal" href="#unit">unit?</a></li>
-<li><a class="reference internal" href="#zero">zero?</a></li>
-<li><a class="reference internal" href="#normalize">normalize</a></li>
-<li><a class="reference internal" href="#distance">distance</a></li>
+<li><a class="reference internal" href="#squared">squared</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:squared"><code class="docutils literal notranslate"><span class="pre">squared</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#magnitude">magnitude</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:magnitude"><code class="docutils literal notranslate"><span class="pre">magnitude</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cross-product">cross-product</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:cross-product"><code class="docutils literal notranslate"><span class="pre">cross-product</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unit">unit?</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:unit?"><code class="docutils literal notranslate"><span class="pre">unit?</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zero">zero?</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:zero?([v3])"><code class="docutils literal notranslate"><span class="pre">zero?(&lt;v3&gt;)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#normalize">normalize</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:normalize"><code class="docutils literal notranslate"><span class="pre">normalize</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#distance">distance</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:distance"><code class="docutils literal notranslate"><span class="pre">distance</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
