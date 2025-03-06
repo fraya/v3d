@@ -247,23 +247,40 @@
         <article role="main" id="furo-main-content">
           <section id="the-v3d-library">
 <h1>The v3d library<a class="headerlink" href="#the-v3d-library" title="Link to this heading">¶</a></h1>
-<section id="v3-class">
-<span id="v3"></span><h2><code class="docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code> class<a class="headerlink" href="#v3-class" title="Link to this heading">¶</a></h2>
-<p>The class <code class="docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code> has three dimensions <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> of
-type <a class="reference external" href="https://opendylan.org/books/drm/Number_Classes#float"><code class="xref drm docutils literal notranslate"><span class="pre">&lt;float&gt;</span></code></a>.</p>
-<section id="creation-with-make">
-<h3>Creation with <code class="docutils literal notranslate"><span class="pre">make</span></code><a class="headerlink" href="#creation-with-make" title="Link to this heading">¶</a></h3>
-<p>To create a vector use keywords:</p>
-<div class="highlight-dylan notranslate"><div class="highlight"><pre><span></span><span class="k">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="nc">&lt;v3&gt;</span><span class="p">,</span><span class="w"> </span><span class="k">x:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="k">y:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="k">z:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span>
+<section id="v3d">
+<h2>v3d<a class="headerlink" href="#v3d" title="Link to this heading">¶</a></h2>
+<dl class="dylan class">
+<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:[v3d]">
+<span class="sig-name descname"><span class="pre">&lt;v3d&gt;</span></span> <em class="property"><span class="pre">Class</span></em><a class="headerlink" href="#v3d:v3d:[v3d]" title="Link to this definition">¶</a></dt>
+<dd><p>Has three dimensions <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> of type <a class="reference external" href="https://opendylan.org/books/drm/Number_Classes#float"><code class="xref drm docutils literal notranslate"><span class="pre">&lt;float&gt;</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See also<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><span class="xref std std-ref">v-x</span></p></li>
+<li><p><span class="xref std std-ref">v-y</span></p></li>
+<li><p><span class="xref std std-ref">v-z</span></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="dylan method">
+<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:make([v3d])">
+<span class="sig-name descname"><span class="pre">make(&lt;v3d&gt;)</span></span> <em class="property"><span class="pre">Method</span></em><a class="headerlink" href="#v3d:v3d:make([v3d])" title="Link to this definition">¶</a></dt>
+<dd><p>To create a vector using keywords. In case that a keyword is not
+used, the dimension is initialized to <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="highlight-dylan notranslate"><div class="highlight"><pre><span></span><span class="k">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="nc">&lt;v3&gt;</span><span class="p">,</span><span class="w"> </span><span class="k">x:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="k">y:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="k">z:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span>
 <span class="n">format-out</span><span class="p">(</span><span class="s">&quot;%=</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
 <span class="c1">// (1.0, 2.0, 3.0)</span>
 </pre></div>
 </div>
-<p>In case that a keyword is not used, the dimension is initialized to
-<code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
-</section>
-<section id="creation-with-v3">
-<h3>Creation with <code class="docutils literal notranslate"><span class="pre">v3</span></code><a class="headerlink" href="#creation-with-v3" title="Link to this heading">¶</a></h3>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="dylan function">
 <dt class="sig sig-object dylan-api dylan" id="v3d:v3d:v3">
 <span class="sig-name descname"><span class="pre">v3</span></span> <em class="property"><span class="pre">Function</span></em><a class="headerlink" href="#v3d:v3d:v3" title="Link to this definition">¶</a></dt>
@@ -301,7 +318,6 @@ passed and the order is important.</p>
 </div>
 </dd></dl>
 
-</section>
 </section>
 <section id="dimension-accessors-x-y-and-z">
 <h2>Dimension accessors (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>)<a class="headerlink" href="#dimension-accessors-x-y-and-z" title="Link to this heading">¶</a></h2>
@@ -392,10 +408,19 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 </dd></dl>
 
 </section>
-<section id="vector-zero-v3-zero">
-<span id="v3-zero"></span><h2>Vector zero (<code class="docutils literal notranslate"><span class="pre">$v3-zero</span></code>)<a class="headerlink" href="#vector-zero-v3-zero" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">$v3-zero</span></code> is a constant for a vector with <code class="docutils literal notranslate"><span class="pre">0.0</span></code> in coordinates
-<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<section id="constants">
+<span id="v3-zero"></span><h2>Constants<a class="headerlink" href="#constants" title="Link to this heading">¶</a></h2>
+<dl class="dylan constant">
+<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:$v3-zero">
+<span class="sig-name descname"><span class="pre">$v3-zero</span></span> <em class="property"><span class="pre">Constant</span></em><a class="headerlink" href="#v3d:v3d:$v3-zero" title="Link to this definition">¶</a></dt>
+<dd><p>Vector with <code class="docutils literal notranslate"><span class="pre">0.0</span></code> in coordinates <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#v3d:v3d:[v3d]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3d&gt;</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="infix-operations">
 <h2>Infix operations<a class="headerlink" href="#infix-operations" title="Link to this heading">¶</a></h2>
@@ -891,12 +916,10 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">The v3d library</a><ul>
-<li><a class="reference internal" href="#v3-class"><code class="docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code> class</a><ul>
-<li><a class="reference internal" href="#creation-with-make">Creation with <code class="docutils literal notranslate"><span class="pre">make</span></code></a></li>
-<li><a class="reference internal" href="#creation-with-v3">Creation with <code class="docutils literal notranslate"><span class="pre">v3</span></code></a><ul>
+<li><a class="reference internal" href="#v3d">v3d</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:[v3d]"><code class="docutils literal notranslate"><span class="pre">&lt;v3d&gt;</span></code></a></li>
+<li><a class="reference internal" href="#v3d:v3d:make([v3d])"><code class="docutils literal notranslate"><span class="pre">make(&lt;v3d&gt;)</span></code></a></li>
 <li><a class="reference internal" href="#v3d:v3d:v3"><code class="docutils literal notranslate"><span class="pre">v3</span></code></a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dimension-accessors-x-y-and-z">Dimension accessors (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>)</a><ul>
@@ -905,7 +928,10 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 <li><a class="reference internal" href="#v3d:v3d:v-z([v3])"><code class="docutils literal notranslate"><span class="pre">v-z(&lt;v3&gt;)</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#vector-zero-v3-zero">Vector zero (<code class="docutils literal notranslate"><span class="pre">$v3-zero</span></code>)</a></li>
+<li><a class="reference internal" href="#constants">Constants</a><ul>
+<li><a class="reference internal" href="#v3d:v3d:$v3-zero"><code class="docutils literal notranslate"><span class="pre">$v3-zero</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#infix-operations">Infix operations</a><ul>
 <li><a class="reference internal" href="#v3d:v3d:=([v3],[v3])"><code class="docutils literal notranslate"><span class="pre">=(&lt;v3&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>
 <li><a class="reference internal" href="#v3d:v3d:+([v3],[v3])"><code class="docutils literal notranslate"><span class="pre">+(&lt;v3&gt;,</span> <span class="pre">&lt;v3&gt;)</span></code></a></li>

@@ -5,30 +5,34 @@ The v3d library
 .. current-library:: v3d
 .. current-module:: v3d
 
-.. _v3:
+v3d
+===
 
-``<v3>`` class
-===============
+.. class:: <v3d>
 
-The class ``<v3>`` has three dimensions ``x``, ``y`` and ``z`` of
-type :drm:`<float>`.
+   Has three dimensions ``x``, ``y`` and ``z`` of type :drm:`<float>`.
 
-Creation with ``make``
-~~~~~~~~~~~~~~~~~~~~~~
+   :seealso:
 
-To create a vector use keywords:
+      - :ref:`v-x`
+      - :ref:`v-y`
+      - :ref:`v-z`
 
-.. code-block:: dylan
 
-  let v = make(<v3>, x: 1.0, y: 2.0, z: 3.0);
-  format-out("%=\n", v);
-  // (1.0, 2.0, 3.0)
+.. method:: make
+   :specializer: <v3d>
 
-In case that a keyword is not used, the dimension is initialized to
-``0.0``.
+   To create a vector using keywords. In case that a keyword is not
+   used, the dimension is initialized to ``0.0``.
 
-Creation with ``v3``
-~~~~~~~~~~~~~~~~~~~~~
+   :example:
+
+     .. code-block:: dylan
+
+        let v = make(<v3>, x: 1.0, y: 2.0, z: 3.0);
+        format-out("%=\n", v);
+        // (1.0, 2.0, 3.0)
+
 
 .. function:: v3
 
@@ -118,11 +122,14 @@ and ``v-z`` respectively.
 
 .. _v3-zero:
 
-Vector zero (``$v3-zero``)
-==========================
+Constants
+=========
 
-``$v3-zero`` is a constant for a vector with ``0.0`` in coordinates
-``x``, ``y`` and ``z``.
+.. constant:: $v3-zero
+
+   Vector with ``0.0`` in coordinates ``x``, ``y`` and ``z``.
+
+   :type: :class:`<v3d>`
 
 Infix operations
 ================
