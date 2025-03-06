@@ -24,7 +24,7 @@ jobs:
       - name: Generate docs
         uses: addnab/docker-run-action@v3
         with:
-          image: ghcr.io/fraya/dylan-docs:main
+          image: ghcr.io/fraya/dylan-docs
           options: -v ${{ github.workspace }}/documentation:/docs
           run: make html
 
