@@ -118,11 +118,14 @@ and ``v-z`` respectively.
 
 .. _v3-zero:
 
-Vector zero (``$v3-zero``)
-==========================
+Constants
+=========
 
-``$v3-zero`` is a constant for a vector with ``0.0`` in coordinates
-``x``, ``y`` and ``z``.
+.. constant:: $v3-zero
+
+   Vector with ``0.0`` in coordinates ``x``, ``y`` and ``z``.
+
+   :type: :class:`<v3d>`
 
 Infix operations
 ================
