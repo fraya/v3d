@@ -127,9 +127,6 @@ Vector zero (``$v3-zero``)
 Infix operations
 ================
 
-Equals (``=``)
-~~~~~~~~~~~~~~
-
 .. method:: =
    :specializer: <v3>, <v3>
 
@@ -149,9 +146,6 @@ Equals (``=``)
      let result = if (v1 = v2) "equals" else "different" end;
      format-out("%s\n", result);
      // different
-
-Addition (``+``)
-~~~~~~~~~~~~~~~~
 
 .. method:: +
    :specializer: <v3>, <v3>
@@ -174,9 +168,6 @@ Addition (``+``)
      // (3.0, 3.0, 3.0)
 
 
-Substraction (``-``)
-~~~~~~~~~~~~~~~~~~~~
-
 .. method:: -
    :specializer: <v3>, <v3>
 
@@ -198,9 +189,6 @@ Substraction (``-``)
      // (1.0, 1.0, 1.0)
 
 
-Negative (``-``)
-~~~~~~~~~~~~~~~~~~
-
 .. method:: -
    :specializer: <v3>
 
@@ -219,9 +207,6 @@ Negative (``-``)
      format-out("%=\n", v2);
      // (-2.0, -2.0, -2.0)
 
-
-Product (``*``)
-~~~~~~~~~~~~~~~
 
 .. method:: *
    :specializer: <v3>, <v3>
@@ -243,9 +228,6 @@ Product (``*``)
      format-out("%=\n", v3);
      // 12.0
 
-
-Scalar multiplication (``*``)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. method:: *
    :specializer: <v3>, <float>
@@ -292,9 +274,6 @@ Scalar multiplication (``*``)
      // (2.0, 2.0, 2.0)
 
 
-Division (``/``)
-~~~~~~~~~~~~~~~~~~~~~~
-
 .. method:: /
    :specializer: <v3>, <float>
 
@@ -317,9 +296,6 @@ Division (``/``)
 Other operations
 ================
 
-squared
-~~~~~~~
-
 .. function:: squared
 
    x ^ 2 + y ^ 2 + z ^ 2.
@@ -335,9 +311,6 @@ squared
      let v = v3(2.0, 2.0, 2.0);
      let s = v.squared;
      // 12.0
-
-magnitude
-~~~~~~~~~
 
 .. function:: magnitude
 
@@ -355,9 +328,6 @@ magnitude
      assert-equal(v.magnitude, 5.0);
      let u = v3(2.0, 3.0, 4.0);
      assert-equal(u.magnitude, sqrt(29.0));
-
-cross-product
-~~~~~~~~~~~~~
 
 .. function:: cross-product
 
@@ -377,9 +347,6 @@ cross-product
      let r = v3(-15.0, -2.0, 39.0);
      assert-equal(cross-product(u, v), r);
 
-unit?
-~~~~~
-
 .. function:: unit?
 
    Is the magnitude of the vector 1.0?
@@ -393,9 +360,6 @@ unit?
 
      let v = v3(0.0, 3.0, 4.0);
      assert-false(v.unit?)
-
-zero?
-~~~~~
 
 .. method:: zero?
    :specializer: <v3>
@@ -412,9 +376,6 @@ zero?
      let v = make(<v3>);
      assert-true(v.zero?)
 
-normalize
-~~~~~~~~~
-
 .. function:: normalize
 
    :signature: normalize *u* => (*normalized*)
@@ -426,9 +387,6 @@ normalize
 
     let v1 = v3(3.0, 1.0, 2.0);
     assert-true(similar(v1.normalize.magnitude, 1.0));
-
-distance
-~~~~~~~~
 
 .. function:: distance
 
