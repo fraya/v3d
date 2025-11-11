@@ -8,19 +8,19 @@ The v3d library
 v3d
 ===
 
-.. class:: <v3d>
+.. class:: <v3>
 
    Has three dimensions ``x``, ``y`` and ``z`` of type :drm:`<float>`.
 
    :seealso:
 
-      - :ref:`v-x`
-      - :ref:`v-y`
-      - :ref:`v-z`
+      - :meth:`v-x(<v3>)`
+      - :meth:`v-y(<v3>)`
+      - :meth:`v-z(<v3>)`
 
 
 .. method:: make
-   :specializer: <v3d>
+   :specializer: <v3>
 
    To create a vector using keywords. In case that a keyword is not
    used, the dimension is initialized to ``0.0``.
@@ -36,14 +36,14 @@ v3d
 
 .. function:: v3
 
-   Short form to create a ``v3``.
+   Short form to create a :class:`<v3>`.
 
    :signature: v3 *x* *y* *z* => (v)
 
    :parameter x: Dimension ``x``. An instance of :drm:`<float>`
    :parameter y: Dimension ``y``. An instance of :drm:`<float>`
    :parameter z: Dimension ``z``. An instance of :drm:`<float>`
-   :value v: An instance of :class:`v3d`
+   :value v: An instance of :class:`v3`
 
    :description:
 
@@ -69,7 +69,7 @@ and ``v-z`` respectively.
 .. method:: v-x
    :specializer: <v3>
 
-   Returns the ``x`` dimension of a :class:`v3d`.
+   Returns the ``x`` dimension of a :class:`<v3>`.
 
    :signature: v-x *v* => (x)
 
@@ -87,7 +87,7 @@ and ``v-z`` respectively.
 .. method:: v-y
    :specializer: <v3>
 
-   Returns the ``y`` dimension of a :class:`v3d`.
+   Returns the ``y`` dimension of a :class:`<v3>`.
 
    :signature: v-y *v* => (y)
 
@@ -105,7 +105,7 @@ and ``v-z`` respectively.
 .. method:: v-z
    :specializer: <v3>
 
-   Returns the ``z`` dimension of a :class:`v3d`.
+   Returns the ``z`` dimension of a :class:`<v3>`.
 
    :signature: v-z *v* => (z)
 
@@ -129,7 +129,7 @@ Constants
 
    Vector with ``0.0`` in coordinates ``x``, ``y`` and ``z``.
 
-   :type: :class:`<v3d>`
+   :type: :class:`<v3>`
 
 Infix operations
 ================
