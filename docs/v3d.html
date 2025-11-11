@@ -250,15 +250,15 @@
 <section id="v3d">
 <h2>v3d<a class="headerlink" href="#v3d" title="Link to this heading">¶</a></h2>
 <dl class="dylan class">
-<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:[v3d]">
-<span class="sig-name descname"><span class="pre">&lt;v3d&gt;</span></span> <em class="property"><span class="pre">Class</span></em><a class="headerlink" href="#v3d:v3d:[v3d]" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:[v3]">
+<span class="sig-name descname"><span class="pre">&lt;v3&gt;</span></span> <em class="property"><span class="pre">Class</span></em><a class="headerlink" href="#v3d:v3d:[v3]" title="Link to this definition">¶</a></dt>
 <dd><p>Has three dimensions <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> of type <a class="reference external" href="https://opendylan.org/books/drm/Number_Classes#float"><code class="xref drm docutils literal notranslate"><span class="pre">&lt;float&gt;</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">See also<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
-<li><p><span class="xref std std-ref">v-x</span></p></li>
-<li><p><span class="xref std std-ref">v-y</span></p></li>
-<li><p><span class="xref std std-ref">v-z</span></p></li>
+<li><p><a class="reference internal" href="#v3d:v3d:v-x([v3])"><code class="xref dylan dylan-meth docutils literal notranslate"><span class="pre">v-x(&lt;v3&gt;)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#v3d:v3d:v-y([v3])"><code class="xref dylan dylan-meth docutils literal notranslate"><span class="pre">v-y(&lt;v3&gt;)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#v3d:v3d:v-z([v3])"><code class="xref dylan dylan-meth docutils literal notranslate"><span class="pre">v-z(&lt;v3&gt;)</span></code></a></p></li>
 </ul>
 </p>
 </dd>
@@ -266,8 +266,8 @@
 </dd></dl>
 
 <dl class="dylan method">
-<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:make([v3d])">
-<span class="sig-name descname"><span class="pre">make(&lt;v3d&gt;)</span></span> <em class="property"><span class="pre">Method</span></em><a class="headerlink" href="#v3d:v3d:make([v3d])" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object dylan-api dylan" id="v3d:v3d:make([v3])">
+<span class="sig-name descname"><span class="pre">make(&lt;v3&gt;)</span></span> <em class="property"><span class="pre">Method</span></em><a class="headerlink" href="#v3d:v3d:make([v3])" title="Link to this definition">¶</a></dt>
 <dd><p>To create a vector using keywords. In case that a keyword is not
 used, the dimension is initialized to <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
 <dl class="field-list">
@@ -284,7 +284,7 @@ used, the dimension is initialized to <code class="docutils literal notranslate"
 <dl class="dylan function">
 <dt class="sig sig-object dylan-api dylan" id="v3d:v3d:v3">
 <span class="sig-name descname"><span class="pre">v3</span></span> <em class="property"><span class="pre">Function</span></em><a class="headerlink" href="#v3d:v3d:v3" title="Link to this definition">¶</a></dt>
-<dd><p>Short form to create a <code class="docutils literal notranslate"><span class="pre">v3</span></code>.</p>
+<dd><p>Short form to create a <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Signature<span class="colon">:</span></dt>
 <dd class="field-odd"><p>v3 <em>x</em> <em>y</em> <em>z</em> =&gt; (v)</p>
@@ -298,7 +298,7 @@ used, the dimension is initialized to <code class="docutils literal notranslate"
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">v3d</span></code></p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:v3"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">v3</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Discussion<span class="colon">:</span></dt>
@@ -326,14 +326,14 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 <dl class="dylan method">
 <dt class="sig sig-object dylan-api dylan" id="v3d:v3d:v-x([v3])">
 <span class="sig-name descname"><span class="pre">v-x(&lt;v3&gt;)</span></span> <em class="property"><span class="pre">Method</span></em><a class="headerlink" href="#v3d:v3d:v-x([v3])" title="Link to this definition">¶</a></dt>
-<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">x</span></code> dimension of a <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">v3d</span></code>.</p>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">x</span></code> dimension of a <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Signature<span class="colon">:</span></dt>
 <dd class="field-odd"><p>v-x <em>v</em> =&gt; (x)</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -354,14 +354,14 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 <dl class="dylan method">
 <dt class="sig sig-object dylan-api dylan" id="v3d:v3d:v-y([v3])">
 <span class="sig-name descname"><span class="pre">v-y(&lt;v3&gt;)</span></span> <em class="property"><span class="pre">Method</span></em><a class="headerlink" href="#v3d:v3d:v-y([v3])" title="Link to this definition">¶</a></dt>
-<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">y</span></code> dimension of a <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">v3d</span></code>.</p>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">y</span></code> dimension of a <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Signature<span class="colon">:</span></dt>
 <dd class="field-odd"><p>v-y <em>v</em> =&gt; (y)</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -382,14 +382,14 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 <dl class="dylan method">
 <dt class="sig sig-object dylan-api dylan" id="v3d:v3d:v-z([v3])">
 <span class="sig-name descname"><span class="pre">v-z(&lt;v3&gt;)</span></span> <em class="property"><span class="pre">Method</span></em><a class="headerlink" href="#v3d:v3d:v-z([v3])" title="Link to this definition">¶</a></dt>
-<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">z</span></code> dimension of a <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">v3d</span></code>.</p>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">z</span></code> dimension of a <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Signature<span class="colon">:</span></dt>
 <dd class="field-odd"><p>v-z <em>v</em> =&gt; (z)</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -416,7 +416,7 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 <dd><p>Vector with <code class="docutils literal notranslate"><span class="pre">0.0</span></code> in coordinates <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#v3d:v3d:[v3d]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3d&gt;</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -434,8 +434,8 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
-<li><p><strong>b</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
+<li><p><strong>b</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -465,13 +465,13 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
-<li><p><strong>b</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
+<li><p><strong>b</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sum</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>sum</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Example<span class="colon">:</span></dt>
@@ -496,13 +496,13 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
-<li><p><strong>b</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
+<li><p><strong>b</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>difference</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>difference</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Example<span class="colon">:</span></dt>
@@ -527,12 +527,12 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>negated</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>negated</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Example<span class="colon">:</span></dt>
@@ -559,8 +559,8 @@ and <code class="docutils literal notranslate"><span class="pre">v-z</span></cod
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
-<li><p><strong>b</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
+<li><p><strong>b</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -595,13 +595,13 @@ multiplication of <em>kv = (kx1, ky1, kz1)</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 <li><p><strong>n</strong> – An instance of <a class="reference external" href="https://opendylan.org/books/drm/Number_Classes#float"><code class="xref drm docutils literal notranslate"><span class="pre">&lt;float&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>product</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>product</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Example<span class="colon">:</span></dt>
@@ -631,12 +631,12 @@ multiplication of <em>kv = (kx1, ky1, kz1)</em>.</p>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>n</strong> – An instance of <a class="reference external" href="https://opendylan.org/books/drm/Number_Classes#float"><code class="xref drm docutils literal notranslate"><span class="pre">&lt;float&gt;</span></code></a>.</p></li>
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>product</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>product</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Example<span class="colon">:</span></dt>
@@ -663,7 +663,7 @@ multiplication of <em>kv = (kx1, ky1, kz1)</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>a</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>a</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 <li><p><strong>n</strong> – An instance of <a class="reference external" href="https://opendylan.org/books/drm/Number_Classes#float"><code class="xref drm docutils literal notranslate"><span class="pre">&lt;float&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
@@ -696,7 +696,7 @@ multiplication of <em>kv = (kx1, ky1, kz1)</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -725,7 +725,7 @@ calculated as the squared root of the squared vector.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -753,13 +753,13 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>u</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>u</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>c</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>c</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -781,7 +781,7 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>u</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>u</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -806,7 +806,7 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>u</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>u</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
@@ -830,10 +830,10 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 <dd class="field-odd"><p>normalize <em>u</em> =&gt; (<em>normalized</em>)</p>
 </dd>
 <dt class="field-even">parameter u<span class="colon">:</span></dt>
-<dd class="field-even"><p>An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p>
+<dd class="field-even"><p>An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p>
 </dd>
 <dt class="field-odd">value normalized<span class="colon">:</span></dt>
-<dd class="field-odd"><p>An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></p>
+<dd class="field-odd"><p>An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></p>
 </dd>
 </dl>
 </div></blockquote>
@@ -853,13 +853,13 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>u</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
-<li><p><strong>v</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code>.</p></li>
+<li><p><strong>u</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
+<li><p><strong>v</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Values<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>distance</strong> – An instance of <code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></p></li>
+<li><p><strong>distance</strong> – An instance of <a class="reference internal" href="#v3d:v3d:[v3]"><code class="xref dylan dylan-class docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -917,8 +917,8 @@ perpendicular to both <em>u</em> and <em>v</em>.</p>
             <ul>
 <li><a class="reference internal" href="#">The v3d library</a><ul>
 <li><a class="reference internal" href="#v3d">v3d</a><ul>
-<li><a class="reference internal" href="#v3d:v3d:[v3d]"><code class="docutils literal notranslate"><span class="pre">&lt;v3d&gt;</span></code></a></li>
-<li><a class="reference internal" href="#v3d:v3d:make([v3d])"><code class="docutils literal notranslate"><span class="pre">make(&lt;v3d&gt;)</span></code></a></li>
+<li><a class="reference internal" href="#v3d:v3d:[v3]"><code class="docutils literal notranslate"><span class="pre">&lt;v3&gt;</span></code></a></li>
+<li><a class="reference internal" href="#v3d:v3d:make([v3])"><code class="docutils literal notranslate"><span class="pre">make(&lt;v3&gt;)</span></code></a></li>
 <li><a class="reference internal" href="#v3d:v3d:v3"><code class="docutils literal notranslate"><span class="pre">v3</span></code></a></li>
 </ul>
 </li>
