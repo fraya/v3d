@@ -24,15 +24,15 @@ jobs:
 
       - name: Add OD to PATH
         run: |
-          echo "/home/runner/work/v3d/opendylan-2023.1/bin" >> $GITHUB_PATH
+          echo "/home/runner/work/v3d/opendylan-2025.1/bin" >> $GITHUB_PATH
 
-      - name: Cache OD 2023.1
-        id: cache-2023-1
+      - name: Cache OD 2025.1.0
+        id: cache-2025-1
         uses: actions/cache@v4
         with:
           path: |
-            /home/runner/work/v3d/opendylan-2023.1
-          key: ${{ runner.os }}-2023-1
+            /home/runner/work/v3d/opendylan-2025.1
+          key: ${{ runner.os }}-2025-1
 
       - name: Cache packages
         id: cache-packages
@@ -44,18 +44,15 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/dylan-package.json') }}
 
       - name: Install Opendylan
-        if: steps.cache-2023-1.outputs.cache-hit != 'true'
+        if: steps.cache-2025-1.outputs.cache-hit != 'true'
         uses: dylan-lang/install-opendylan@v3
-        with:
-          version: 2023.1
-          tag: v2023.1.0
 
       - name: Download dependencies
         if: steps.cache-packages.outputs.cache-hit != 'true'
-        run: dylan update
+        run: deft update
 
       - name: Build tests
-        run: dylan build v3d-test-suite
+        run: deft build v3d-test-suite
 
       - name: Run tests
         run: _build/bin/v3d-test-suite --tag=-benchmark --progress none --report surefire > _build/TEST-v3d.xml
