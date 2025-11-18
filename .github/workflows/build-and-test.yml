@@ -14,6 +14,10 @@ on:
   # This enables the Run Workflow button on the Actions tab.
   workflow_dispatch:
 
+permissions:
+  contents: read
+  checks: write  # Junit
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -23,14 +27,14 @@ jobs:
 
       - name: Add OD to PATH
         run: |
-          echo "/home/runner/work/v3d/opendylan-2025.1/bin" >> $GITHUB_PATH
+          echo "/home/runner/work/v3d/_od/" >> $GITHUB_PATH
 
-      - name: Cache OD 2025.1.0
+      - name: Cache OD compiler
         id: cache-2025-1
         uses: actions/cache@v4
         with:
           path: |
-            /home/runner/work/v3d/opendylan-2025.1
+            /home/runner/work/v3d/_od/
           key: ${{ runner.os }}-2025-1
 
       - name: Cache packages
@@ -51,7 +55,9 @@ jobs:
         run: deft update
 
       - name: Build tests
-        run: deft build v3d-test-suite
+        run: |
+          ls -lR /home/runner/work/
+          deft build v3d-test-suite
 
       - name: Run tests
         run: _build/bin/v3d-test-suite --tag=-benchmark --progress none --report surefire > _build/TEST-v3d.xml
