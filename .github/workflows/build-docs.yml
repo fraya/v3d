@@ -9,6 +9,9 @@ on:
   # This enables the Run Workflow button on the Actions tab.
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
 
   build-and-deploy:
